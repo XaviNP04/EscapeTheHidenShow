@@ -6,7 +6,7 @@ public class CamaraVigilancia : MonoBehaviour
     void Start()
     {
         // si cambiamos el nombre del jugador cambiar tambien
-        player = GameObject.Find("First Person Player").transform;
+        player = GameObject.Find("-->FirstPersonPlayer").transform;
     }
 
     // Update is called once per frame
