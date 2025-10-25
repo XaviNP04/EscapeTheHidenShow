@@ -26,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -45,19 +49,19 @@ public class PlayerMovement : MonoBehaviour
         var ultAltura = controller.height;
         controller.height = Mathf.Lerp(controller.height, h, 5 * Time.deltaTime); // que se agache lentamente
         transform.position = transform.position + new Vector3(transform.position.x, (controller.height-ultAltura)/2, transform.position.z);
-
         // fin agacharse
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        
 
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         float currentSpeed = isRunning ? runSpeed : walkSpeed;
 
-        Vector3 move = transform.right * x + transform.forward * z;
-
+        // movimiento basico
+        Vector3 move = (transform.right * x) + (transform.forward * z);
+        move = Vector3.ClampMagnitude(move, 1f);
         controller.Move(move * currentSpeed * Time.deltaTime);
 
+        // gravedad (para escaleras)
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
