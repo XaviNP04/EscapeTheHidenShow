@@ -2,30 +2,49 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
+    
+    public enum RotationAxes
+    { // Movimiento ratón
+        MouseXandY = 0,
+        MouseX = 1,
+        MouseY = 2
+    }
 
-    public float mouseSensitivity = 100f;
+    //private Camera _camera;
 
-    public Transform playerBody;
+    public RotationAxes axes = RotationAxes.MouseXandY;
+    public float sensitivityHor = 9.0f; // velocidad
+    public float sensitivityVert = 9.0f;
+    public float minPitchAngle = -90.0f; // rango de rotación vertical
 
-    float xRotation = 0f;
+    public float maxPitchAngle = 90.0f;
+    private float pitchAngle = 0; // cabeceo (pitch) actual
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked; // deja el ratón en el centro de la ventana
+        Cursor.visible = false;
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        if (axes == RotationAxes.MouseX)
+        {
+            transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityHor, 0);
+        }
+        else
+        {
+            pitchAngle -= Input.GetAxis("Mouse Y") * sensitivityVert;
+            pitchAngle = Mathf.Clamp(pitchAngle, minPitchAngle, maxPitchAngle);
+            float yawAngle = transform.localEulerAngles.y; // mantener el mismo ángulo de guiñada (yaw)
+            if (axes == RotationAxes.MouseXandY)
+            {
+                yawAngle += Input.GetAxis("Mouse X") * sensitivityHor;
+            }
+            transform.localEulerAngles = new Vector3(pitchAngle, yawAngle, 0);
+        }
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
     }
 }
