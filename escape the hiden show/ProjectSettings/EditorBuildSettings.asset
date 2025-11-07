@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TestScenes/MiguelTScenes/MainMenu.unity
     guid: adc0687b7ce2fcf429775274fc6ce5be
-  - enabled: 1
+  - enabled: 0
     path: Assets/TestScenes/MainTestScene.unity
     guid: f5c40e7272ca3bf408907e2743745b8e
-  - enabled: 0
+  - enabled: 1
     path: Assets/TestScenes/MiguelTScenes/MiguelTesting.unity
     guid: 2437f1641d6c33c469e8654c968c3224
   - enabled: 0
     path: Assets/TestScenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/TestScenes/MiguelTScenes/Lobby.unity
+    guid: 443acf040a73e0349a9b9258c3277d92
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

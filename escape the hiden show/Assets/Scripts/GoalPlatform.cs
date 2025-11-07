@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalPlatform : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GoalPlatform : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             platformRenderer.material.color = playerOnColor;
+            SceneManager.LoadScene(2);
         }
     }
 
