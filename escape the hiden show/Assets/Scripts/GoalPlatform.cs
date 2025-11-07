@@ -10,23 +10,21 @@ public class GoalPlatform : MonoBehaviour
     void Start()
     {
         platformRenderer = GetComponent<Renderer>();
-        platformRenderer.material.color = normalColor;
     }
 
     void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag("Player"))
         {
             platformRenderer.material.color = playerOnColor;
             SceneManager.LoadScene(2);
         }
-    }
 
-    void OnTriggerExit(Collider other)
-    {
         if (other.CompareTag("Player"))
         {
-            platformRenderer.material.color = normalColor;
+            platformRenderer.material.color = playerOnColor;
+            SceneManager.LoadScene(2);
         }
     }
 }
