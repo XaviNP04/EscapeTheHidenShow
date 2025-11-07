@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 6
   runSpeed: 12
+  crounchSpeed: 3
   gravity: -19.62
   groundCheck: {fileID: 763798620}
   groundDistance: 0.4
@@ -3132,6 +3133,10 @@ PrefabInstance:
     - target: {fileID: 2025190105841944268, guid: 3589fae6cdd6f00498ad240c32209c79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538599910818980638, guid: 3589fae6cdd6f00498ad240c32209c79, type: 3}
+      propertyPath: interactDistance
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9158780880731579454, guid: 3589fae6cdd6f00498ad240c32209c79, type: 3}
       propertyPath: m_Name

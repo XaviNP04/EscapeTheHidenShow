@@ -33,25 +33,30 @@ public class InventoryUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        // ocultar todos
+        if (slotImages == null || slotImages.Length == 0) return;
+
+        
         for (int i = 0; i < slotImages.Length; i++)
         {
             if (slotImages[i] == null) continue;
-            slotImages[i].sprite = null;
-            slotImages[i].enabled = false;
-        }
 
-        // rellenar con items actuales
-        if (Inventory.instance == null) return;
+            
+            if (Inventory.instance == null || i >= Inventory.instance.items.Count)
+            {
+                slotImages[i].sprite = null;
+                slotImages[i].color = new Color(1, 1, 1, 0.1f);
+                continue;
+            }
 
-        for (int i = 0; i < Inventory.instance.items.Count && i < slotImages.Length; i++)
-        {
+            
             var item = Inventory.instance.items[i];
-            if (slotImages[i] != null && item != null)
+            if (item != null)
             {
                 slotImages[i].sprite = item.icon;
-                slotImages[i].enabled = true;
+                slotImages[i].preserveAspect = true;
+                slotImages[i].color = Color.white;
             }
         }
     }
+
 }
