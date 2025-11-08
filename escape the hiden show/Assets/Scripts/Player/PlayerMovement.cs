@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 velocity;
     private bool isGrounded;
-    private bool isCrouching;
     private float alturaNormal;
     private float alturaCamaraNormal;
 
@@ -70,18 +69,15 @@ public class PlayerMovement : MonoBehaviour
         if (wantsToCrouch)
         {
             targetHeight = 0.3f * alturaNormal;
-            isCrouching = true;
         }
         else if (canUncrouch)
         {
             targetHeight = alturaNormal;
-            isCrouching = false;
         }
         else
         {
             // Can't uncrouch due to low ceiling, stay crouched
             targetHeight = 0.3f * alturaNormal;
-            isCrouching = true;
         }
 
         // Store previous height for position adjustment
