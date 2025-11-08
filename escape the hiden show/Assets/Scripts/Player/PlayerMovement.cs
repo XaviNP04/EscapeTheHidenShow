@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _charController = GetComponent<CharacterController>();
         _camera = _camera = GetComponentInChildren<Camera>();
-        Cursor.lockState = CursorLockMode.Locked; // deja el ratón en el centro de la ventana
+        Cursor.lockState = CursorLockMode.Locked; // deja el ratï¿½n en el centro de la ventana
         Cursor.visible = false;
 
         alturaNormal = _charController.height;
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float deltaX = Input.GetAxis("Horizontal"); // Las teclas asociadas están en:
+        float deltaX = Input.GetAxis("Horizontal"); // Las teclas asociadas estï¿½n en:
         float deltaZ = Input.GetAxis("Vertical"); // Edit\Project Settings\Input
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
