@@ -53,8 +53,15 @@ public class InventoryUI : MonoBehaviour
             if (item != null)
             {
                 slotImages[i].sprite = item.icon;
-                slotImages[i].preserveAspect = true;
                 slotImages[i].color = Color.white;
+
+                
+                slotImages[i].preserveAspect = false;
+                RectTransform rt = slotImages[i].rectTransform;
+                rt.anchorMin = Vector2.zero;
+                rt.anchorMax = Vector2.one;
+                rt.offsetMin = Vector2.zero;
+                rt.offsetMax = Vector2.zero;
             }
         }
     }
