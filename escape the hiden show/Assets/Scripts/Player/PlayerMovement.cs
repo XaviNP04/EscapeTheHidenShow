@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // agacharse
-        bool wantsToCrouch = Input.GetKey("c");
+        bool wantsToCrouch = Input.GetKey(KeyCode.LeftControl);
         bool canUncrouch = CanUncrouch();
 
         // Determine target height
