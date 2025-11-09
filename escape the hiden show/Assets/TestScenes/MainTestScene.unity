@@ -6323,15 +6323,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levers:
-  - {fileID: 303590124}
-  - {fileID: 222187360}
-  - {fileID: 45976181}
-  - {fileID: 422394436}
+  - {fileID: 1400766655}
+  - {fileID: 1665052507}
+  - {fileID: 1915900256}
+  - {fileID: 531407063}
   correctDirections:
-  - '"Up"'
-  - '"Down"'
-  - '"Left"'
-  - '"Right"'
+  - Up
+  - Down
+  - Left
+  - Right
   door: {fileID: 1056718724}
 --- !u!4 &1961136808
 Transform:
