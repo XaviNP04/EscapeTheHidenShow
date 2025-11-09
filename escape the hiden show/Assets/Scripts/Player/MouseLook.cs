@@ -10,8 +10,6 @@ public class MouseLook : MonoBehaviour
         MouseY = 2
     }
 
-    //private Camera _camera;
-
     public RotationAxes axes = RotationAxes.MouseXandY;
     public float sensitivityHor = 9.0f; // velocidad
     public float sensitivityVert = 9.0f;
