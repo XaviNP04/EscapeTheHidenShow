@@ -5,7 +5,7 @@ public class InspectedTarget : MonoBehaviour
     private Transform inspectionPoint;
 
     // Velocidad de rotación
-    public float rotationSpeed = 1000f;
+    public float rotationSpeed = 300f;
     public float minDistanceZ = -0.5f;
     public float maxDistanceZ = 1.0f;
     public float zoomSpeed = 5.0f;
@@ -16,6 +16,8 @@ public class InspectedTarget : MonoBehaviour
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private Transform originalParent;
+    private Collider collider;
+    private Vector3 centerOffset;
     
     public void Inspect(Transform iPoint)
     {
@@ -26,15 +28,21 @@ public class InspectedTarget : MonoBehaviour
         originalPosition = transform.position;
         originalRotation = transform.rotation;
 
+        collider = GetComponent<Collider>();
+        centerOffset = transform.position - collider.bounds.center;
+
         // Deshabilitar su Collier (opcional, pero ayuda a que no bloquee otros Raycasts):
         // GetComponent<Collider>().enabled = false; 
 
         // Posicionar en el punto de inspección:
         transform.SetParent(inspectionPoint); // Lo hace hijo del InspectionPoint
-        transform.localPosition = Vector3.zero; // Posiciona el objeto exactamente en el punto
+        transform.localPosition = Vector3.zero + centerOffset; // Posiciona el objeto exactamente en el punto
         transform.localRotation = Quaternion.identity; // Opcional: resetea su rotación local
 
         isInspecting = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void Update()
@@ -68,7 +76,7 @@ public class InspectedTarget : MonoBehaviour
             }
 
             // El punto de pivote es la posición del objeto
-            Vector3 pivot = transform.position;
+            Vector3 pivot = collider.bounds.center;
 
             // La cantidad de rotación por frame
             float rotAmount = rotationSpeed * Time.deltaTime;
@@ -134,6 +142,35 @@ public class InspectedTarget : MonoBehaviour
 
                 // Desactivar el modo de inspección y desbloquear al jugador:
                 isInspecting = false;
+
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                HandleComponentClick();
+            }
+        }
+    }
+
+    private void HandleComponentClick()
+    {
+        // Lanza un rayo desde la posición del ratón en la pantalla.
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 5f))
+        {
+            var hitObject = hit.transform.gameObject;
+            var target = hitObject.GetComponent<ClickAction>();
+
+            if (target != null)
+            {
+                // El componente golpeado pertenece al objeto que estamos inspeccionando
+                if (target.transform.IsChildOf(this.gameObject.transform))
+                {
+                    target.Action();
+                }
             }
         }
     }

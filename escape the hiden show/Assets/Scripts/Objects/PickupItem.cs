@@ -4,6 +4,7 @@ public class PickupItem : MonoBehaviour
 {
     public ItemSO itemData;          // Arrastrar aquí tu ItemSO de la llave
     public float interactDistance = 3f; // Distancia máxima para recoger
+    public bool destruct = true;
 
     private Camera playerCamera;
 
@@ -46,7 +47,15 @@ public class PickupItem : MonoBehaviour
                 if (Inventory.instance.AddItem(itemData))
                 {
                     Debug.Log("Has recogido: " + itemData.displayName);
-                    Destroy(gameObject); // desaparece del mundo
+
+                    if (destruct)
+                    {
+                        Destroy(gameObject); // desaparece del mundo
+                    } 
+                    else
+                    {
+                        gameObject.SetActive(false);
+                    }
                 }
                 else
                 {
