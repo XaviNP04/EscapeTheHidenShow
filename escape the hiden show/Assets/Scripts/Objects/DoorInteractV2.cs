@@ -64,4 +64,11 @@ public class DoorInteractV2 : MonoBehaviour
             }
         }
     }
+    public void OpenDoor()
+    {
+        if (alreadyUnlocked) return;
+        isOpen = true;
+        alreadyUnlocked = true;
+
+    }
 }
