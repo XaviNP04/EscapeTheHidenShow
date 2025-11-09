@@ -35,6 +35,7 @@ public class LeverPuzzleManager : MonoBehaviour
     {
         for (int i = 0; i < levers.Length; i++)
         {
+            Debug.Log($"Palanca {i + 1}: actual={currentDirections[i]} | correcta={correctDirections[i]}");
             if (currentDirections[i] != correctDirections[i])
                 return;
         }
