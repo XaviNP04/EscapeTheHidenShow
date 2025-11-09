@@ -40,6 +40,14 @@ public class ItemGlow : MonoBehaviour
             interactionUI.SetActive(false);
     }
 
+    void OnGUI()
+    { // se ejecuta después de dibujar el frame del juego
+        int size = 20;
+        float posX = playerCamera.pixelWidth / 2 - size / 4;
+        float posY = playerCamera.pixelHeight / 2 - size / 2;
+        GUI.Label(new Rect(posX, posY, size, size), "+"); // puede mostrar texto e imágenes
+    }
+
     void Update()
     {
         Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
@@ -55,10 +63,9 @@ public class ItemGlow : MonoBehaviour
                     HighlightItem(hit.collider.gameObject);
                 }
 
-                // Update UI position and show it
+                // Actualizar posicion de UI
                 UpdateUIPosition(hit.point);
 
-                // Get custom interaction text from the object
                 ActionText interactable = hit.collider.GetComponent<ActionText>();
                 if (interactable != null)
                 {
@@ -75,7 +82,7 @@ public class ItemGlow : MonoBehaviour
             }
         }
 
-        // If we're not looking at an item, hide UI and remove highlight
+        // Si no estamos mirando hacia un objeto, esconder UI y quitar el highlight
         if (isLookingAtItem)
         {
             HideInteractionUI();

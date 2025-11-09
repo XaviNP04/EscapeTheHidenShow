@@ -44,6 +44,9 @@ public class InspectedTarget : MonoBehaviour
             float RotationX = 0f;
             float RotationY = 0f;
 
+            // Quitar el action display
+            gameObject.tag = "Untagged";
+
             // Rotación Vertical (Eje X) con W y S
             if (Input.GetKey(KeyCode.W))
             {
@@ -122,6 +125,9 @@ public class InspectedTarget : MonoBehaviour
                 transform.SetParent(originalParent); // Devuelve al padre original (null si estaba suelto)
                 transform.position = originalPosition;
                 transform.rotation = originalRotation;
+
+                // Para volver a abilitar el display ('INSPECCIONAR')
+                gameObject.tag = "ImportantItem";
 
                 // Volver a habilitar su Colisionador:
                 //GetComponent<Collider>().enabled = true; 

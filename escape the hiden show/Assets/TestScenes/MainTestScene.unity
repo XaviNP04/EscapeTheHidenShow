@@ -389,6 +389,10 @@ PrefabInstance:
       value: Television
       objectReference: {fileID: 0}
     - target: {fileID: 1679347066862348, guid: e10681668e69faf44abb588101ae0d74, type: 3}
+      propertyPath: m_TagString
+      value: ImportantItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679347066862348, guid: e10681668e69faf44abb588101ae0d74, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -443,6 +447,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1679347066862348, guid: e10681668e69faf44abb588101ae0d74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1412915286}
+    - targetCorrespondingSourceObject: {fileID: 1679347066862348, guid: e10681668e69faf44abb588101ae0d74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1412915290}
   m_SourcePrefab: {fileID: 100100000, guid: e10681668e69faf44abb588101ae0d74, type: 3}
 --- !u!1 &58450636
 GameObject:
@@ -469,7 +476,7 @@ Transform:
   m_GameObject: {fileID: 58450636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6282654, y: 6.248212, z: 3.0463932}
+  m_LocalPosition: {x: 100, y: 6.248212, z: 3.0463932}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -718,7 +725,7 @@ Transform:
   m_GameObject: {fileID: 265429895}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: 3.36, z: -16.91}
+  m_LocalPosition: {x: 100, y: 3.36, z: -16.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1102,7 +1109,7 @@ Transform:
   m_GameObject: {fileID: 362044671}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 100, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1209,7 +1216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430377907}
   m_Layer: 0
-  m_Name: Puerta
+  m_Name: Puerta1
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2276,7 +2283,7 @@ Transform:
   m_GameObject: {fileID: 970447605}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 100, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3011,7 +3018,7 @@ Transform:
   m_GameObject: {fileID: 1200008961}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7492394, y: 2.9367604, z: -16.674322}
+  m_LocalPosition: {x: 105.74924, y: 2.9367604, z: -16.674322}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3240,6 +3247,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 85f4b8ae8ae92f847acf32552b701228, type: 3}
   m_PrefabInstance: {fileID: 1761566409}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1259565216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6978678039004695270, guid: 1044ceb17c643e303a286bc78a947a57, type: 3}
+  m_PrefabInstance: {fileID: 3618152177398010049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1259565221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259565216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ca6705684c1c44588c2aac667992cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: ABRIR (REQUIERE LLAVE)
+--- !u!114 &1259565222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259565216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4c50a032d386b43ad497173d58f102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredKeyID: key_001
+  doorHinge: {fileID: 430377907}
+  openAngle: 90
+  openSpeed: 2
+  interactDistance: 3
 --- !u!1 &1386587370
 GameObject:
   m_ObjectHideFlags: 0
@@ -3469,6 +3511,19 @@ MonoBehaviour:
   minDistanceZ: -0.5
   maxDistanceZ: 1
   zoomSpeed: 5
+--- !u!114 &1412915290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412915284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ca6705684c1c44588c2aac667992cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: INSPECCIONAR
 --- !u!1 &1430040761
 GameObject:
   m_ObjectHideFlags: 0
@@ -4868,9 +4923,17 @@ PrefabInstance:
       propertyPath: doorHinge
       value: 
       objectReference: {fileID: 430377907}
+    - target: {fileID: 4113934039993021819, guid: 1044ceb17c643e303a286bc78a947a57, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6978678039004695270, guid: 1044ceb17c643e303a286bc78a947a57, type: 3}
       propertyPath: m_Name
       value: puerta_celda
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978678039004695270, guid: 1044ceb17c643e303a286bc78a947a57, type: 3}
+      propertyPath: m_TagString
+      value: ImportantItem
       objectReference: {fileID: 0}
     - target: {fileID: 7751519726475513948, guid: 1044ceb17c643e303a286bc78a947a57, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4916,10 +4979,17 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8b41cae0cc12f5c4aa6b830d76f83e31, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4113934039993021819, guid: 1044ceb17c643e303a286bc78a947a57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6978678039004695270, guid: 1044ceb17c643e303a286bc78a947a57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1259565221}
+    - targetCorrespondingSourceObject: {fileID: 6978678039004695270, guid: 1044ceb17c643e303a286bc78a947a57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1259565222}
   m_SourcePrefab: {fileID: 100100000, guid: 1044ceb17c643e303a286bc78a947a57, type: 3}
 --- !u!4 &3705028538706840297 stripped
 Transform:
@@ -5110,7 +5180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8321283424418200620, guid: 9a178148e14d95046ae4bdae3b5be3fd, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Puerta2
       objectReference: {fileID: 0}
     - target: {fileID: 8321283424418200620, guid: 9a178148e14d95046ae4bdae3b5be3fd, type: 3}
       propertyPath: m_TagString
