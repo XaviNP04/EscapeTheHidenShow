@@ -4,11 +4,11 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     [Tooltip("Asigna las 5 Image (iconos) en el inspector en el orden del slot 0..4")]
-    public Image[] slotImages; // tamaño 5
+    public Image[] slotImages; // tamaï¿½o 5
 
     private void OnEnable()
     {
-        // si Inventory.instance ya existe, suscribimos; si no, intentamos más tarde en Start
+        // si Inventory.instance ya existe, suscribimos; si no, intentamos mas tarde en Start
         if (Inventory.instance != null)
             Inventory.instance.OnInventoryChanged += UpdateUI;
     }
@@ -21,10 +21,10 @@ public class InventoryUI : MonoBehaviour
 
     private void Start()
     {
-        // Si nos suscribimos en OnEnable y inventory no existía antes, intentar ahora
+        // Si nos suscribimos en OnEnable y inventory no existia antes, intentar ahora
         if (Inventory.instance != null)
         {
-            Inventory.instance.OnInventoryChanged -= UpdateUI; // evitar doble subscripción
+            Inventory.instance.OnInventoryChanged -= UpdateUI; // evitar doble subscripciï¿½n
             Inventory.instance.OnInventoryChanged += UpdateUI;
         }
 

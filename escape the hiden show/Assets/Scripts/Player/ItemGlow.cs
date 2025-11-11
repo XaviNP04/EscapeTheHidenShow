@@ -7,7 +7,7 @@ public class ItemGlow : MonoBehaviour
 {
     [Header("Highlight Settings")]
     public float maxDistance = 10f;
-    public Color highlightColor = Color.yellow;
+    public Color highlightColor = Color.grey;
 
     [Header("UI Settings")]
     public GameObject interactionUI; 
@@ -41,11 +41,11 @@ public class ItemGlow : MonoBehaviour
     }
 
     void OnGUI()
-    { // se ejecuta después de dibujar el frame del juego
+    { // se ejecuta despuï¿½s de dibujar el frame del juego
         int size = 20;
         float posX = playerCamera.pixelWidth / 2 - size / 4;
         float posY = playerCamera.pixelHeight / 2 - size / 2;
-        GUI.Label(new Rect(posX, posY, size, size), "+"); // puede mostrar texto e imágenes
+        GUI.Label(new Rect(posX, posY, size, size), "+"); // puede mostrar texto e imï¿½genes
     }
 
     void Update()
