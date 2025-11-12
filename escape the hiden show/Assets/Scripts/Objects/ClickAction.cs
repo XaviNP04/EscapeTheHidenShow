@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ClickAction : MonoBehaviour
 {
-    public GameObject requiredObject;
-    public string objectID;
+    [SerializeField] private GameObject requiredObject;
+    [SerializeField] private string objectID;
 
     void Start()
     {
@@ -23,6 +23,7 @@ public class ClickAction : MonoBehaviour
             Inventory.instance.RemoveItemByID(objectID);
 
             requiredObject.GetComponent<PickupItem>().enabled = false;
+
             Debug.Log("Dial colocado");
         }
         else

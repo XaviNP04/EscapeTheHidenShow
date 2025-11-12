@@ -9,6 +9,7 @@ public class ViewedTarget : MonoBehaviour
     // Para guardar la posición y rotación originales al iniciar la inspección.
     private Vector3 originalPosition;
     private Quaternion originalRotation;
+    private Vector3 originalScale;
     private Transform originalParent;
     private Collider collider;
 
@@ -22,6 +23,7 @@ public class ViewedTarget : MonoBehaviour
         originalParent = _camera.transform.parent;
         originalPosition = _camera.transform.position;
         originalRotation = _camera.transform.rotation;
+        originalScale = _camera.transform.localScale;
 
         collider = GetComponent<Collider>();
 
@@ -31,7 +33,8 @@ public class ViewedTarget : MonoBehaviour
         // Posicionar en el punto de inspección:
         _camera.transform.SetParent(viewPoint); // Lo hace hijo del InspectionPoint
         _camera.transform.localPosition = Vector3.zero; // Posiciona el objeto exactamente en el punto
-        _camera.transform.localRotation = Quaternion.identity; // Opcional: resetea su rotación local
+        _camera.transform.localRotation = Quaternion.identity; // Opcional: Resetea su rotación local
+        _camera.transform.localScale = Vector3.one; // Forzar a que la escala sea 1 para evitar posibles deformaciones
 
         isInspecting = true;
 
@@ -52,6 +55,7 @@ public class ViewedTarget : MonoBehaviour
                 _camera.transform.SetParent(originalParent); // Devuelve al padre original (null si estaba suelto)
                 _camera.transform.position = originalPosition;
                 _camera.transform.rotation = originalRotation;
+                _camera.transform.localScale = originalScale;
 
                 // Para volver a abilitar el display ('INSPECCIONAR')
                 gameObject.tag = "ImportantItem";
