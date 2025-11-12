@@ -25,8 +25,8 @@ public class InspectedTarget : MonoBehaviour
 
         // Guardar el estado original del objeto:
         originalParent = transform.parent;
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
+        originalPosition = transform.localPosition;
+        originalRotation = transform.localRotation;
 
         collider = GetComponent<Collider>();
         centerOffset = transform.position - collider.bounds.center;
@@ -131,8 +131,8 @@ public class InspectedTarget : MonoBehaviour
             {
                 // Restaurar el estado original del objeto:
                 transform.SetParent(originalParent); // Devuelve al padre original (null si estaba suelto)
-                transform.position = originalPosition;
-                transform.rotation = originalRotation;
+                transform.localPosition = originalPosition;
+                transform.localRotation = originalRotation;
 
                 // Para volver a abilitar el display ('INSPECCIONAR')
                 gameObject.tag = "ImportantItem";
