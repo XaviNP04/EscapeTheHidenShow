@@ -21,6 +21,8 @@ public class ClickAction : MonoBehaviour
             requiredObject.transform.localScale = Vector3.one;
 
             Inventory.instance.RemoveItemByID(objectID);
+
+            requiredObject.GetComponent<PickupItem>().enabled = false;
             Debug.Log("Dial colocado");
         }
         else

@@ -3,13 +3,13 @@ using UnityEngine;
 public class LeverPuzzleManager : MonoBehaviour
 {
     [Header("Configura las 4 palancas")]
-    public LeverInteract[] levers = new LeverInteract[4];
+    public LeverInteractV2[] levers = new LeverInteractV2[4];
 
     [Header("Direcciones correctas (Up, Down, Left, Right)")]
     public string[] correctDirections = new string[4];
 
     [Header("Puerta a abrir")]
-    public DoorInteractV2 door;
+    public ResolutionAction obj;
 
     private string[] currentDirections = new string[4];
 
@@ -42,7 +42,7 @@ public class LeverPuzzleManager : MonoBehaviour
 
         
         Debug.Log("? ¡Puzzle completado! Abriendo puerta...");
-        if (door != null)
-            door.OpenDoor();
+        if (obj != null)
+            obj.Action();
     }
 }

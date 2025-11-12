@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InspectObject : MonoBehaviour
+public class ViewPuzzle : MonoBehaviour
 {
     private Camera _camera;
     private Transform personaje;
@@ -8,7 +8,6 @@ public class InspectObject : MonoBehaviour
     private MouseLook mouselook;
     private MouseLook mouselookCam;
     private bool inspecting;
-    [SerializeField] private Transform inspectionPoint;
 
     void Start()
     {
@@ -20,7 +19,7 @@ public class InspectObject : MonoBehaviour
         inspecting = false;
     }
 
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && !inspecting)
@@ -31,14 +30,14 @@ public class InspectObject : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 5f))
             {
                 var hitObject = hit.transform.gameObject;
-                var target = hitObject.GetComponent<InspectedTarget>();
+                var target = hitObject.GetComponent<ViewedTarget>();
                 if (target != null)
                 {
                     movement.enabled = false;
                     mouselook.enabled = false;
                     mouselookCam.enabled = false;
                     inspecting = true;
-                    target.Inspect(inspectionPoint);
+                    target.View();
                 }
             }
         }

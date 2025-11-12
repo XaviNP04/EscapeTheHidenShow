@@ -127,7 +127,7 @@ public class InspectedTarget : MonoBehaviour
             }
 
 
-            if (Input.GetMouseButton(1))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 // Restaurar el estado original del objeto:
                 transform.SetParent(originalParent); // Devuelve al padre original (null si estaba suelto)
