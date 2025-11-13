@@ -67,8 +67,12 @@ public class SpeakerPuzzleManager : MonoBehaviour
     private IEnumerator RomperCaja()
     {
         yield return new WaitForSeconds(3f);
+
         Destroy(requiredObject1);
+
         requiredObject2.SetActive(true);
+        requiredObject2.GetComponent<AudioSource>().Play();
+
         rb.isKinematic = false;
     }
 }
