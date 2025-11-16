@@ -44,7 +44,7 @@ public class InventoryUI : MonoBehaviour
             if (Inventory.instance == null || i >= Inventory.instance.items.Count)
             {
                 slotImages[i].sprite = null;
-                slotImages[i].color = new Color(1, 1, 1, 0.1f);
+                slotImages[i].color = new Color(0.1f, 0.1f, 0.1f, 0.01f);
                 continue;
             }
 
