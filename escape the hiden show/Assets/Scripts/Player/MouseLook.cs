@@ -28,6 +28,9 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DialogueSystem.dialogueActive)
+            return;
+
         if (axes == RotationAxes.MouseX)
         {
             transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityHor, 0);

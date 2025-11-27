@@ -1,16 +1,26 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class DialogueSystem : MonoBehaviour
 {
     public static DialogueSystem instance;
 
+    [Header("UI")]
     public GameObject panel;
     public TMP_Text dialogueText;
     public TMP_Text continueHint;
 
+    [Header("Typewriter Speed")]
+    public float typeSpeed = 0.03f;
+
     private string[] lines;
     private int index;
+
+    private bool isTyping = false;
+    private bool skipTyping = false;
+
+    public static bool dialogueActive = false;
 
     void Awake()
     {
@@ -19,11 +29,21 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        if (panel.activeSelf && Input.GetMouseButtonDown(0))
+        if (!panel.activeSelf) return;
+
+        if (Input.GetMouseButtonDown(0))
         {
-            NextLine();
+            if (isTyping)
+            {
+                skipTyping = true;
+            }
+            else
+            {
+                NextLine();
+            }
         }
     }
+
 
     public void StartDialogue(string[] newLines)
     {
@@ -31,8 +51,37 @@ public class DialogueSystem : MonoBehaviour
         index = 0;
 
         panel.SetActive(true);
-        dialogueText.text = lines[index];
+        dialogueActive = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        StartCoroutine(TypeLine());
     }
+
+
+    IEnumerator TypeLine()
+    {
+        isTyping = true;
+        skipTyping = false;
+
+        dialogueText.text = "";
+
+        foreach (char c in lines[index])
+        {
+            if (skipTyping)
+            {
+                dialogueText.text = lines[index];
+                break;
+            }
+
+            dialogueText.text += c;
+            yield return new WaitForSeconds(typeSpeed);
+        }
+
+        isTyping = false;
+    }
+
 
     void NextLine()
     {
@@ -44,11 +93,16 @@ public class DialogueSystem : MonoBehaviour
             return;
         }
 
-        dialogueText.text = lines[index];
+        StartCoroutine(TypeLine());
     }
+
 
     void EndDialogue()
     {
         panel.SetActive(false);
+        dialogueActive = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

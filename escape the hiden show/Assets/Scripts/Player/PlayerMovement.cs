@@ -48,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (DialogueSystem.dialogueActive)
+            return;
+
         float deltaX = Input.GetAxis("Horizontal"); // Las teclas asociadas est�n en:
         float deltaZ = Input.GetAxis("Vertical"); // Edit\Project Settings\Input
 

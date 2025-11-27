@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
@@ -7,9 +8,10 @@ public class DialogueTrigger : MonoBehaviour
 
     public bool autoStartOnSceneLoad = false;
 
-    void Start()
+    async Task Start()
     {
         if (autoStartOnSceneLoad)
+            
             TriggerDialogue();
     }
 
