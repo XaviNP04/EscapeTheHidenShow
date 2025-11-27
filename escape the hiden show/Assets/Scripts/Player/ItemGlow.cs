@@ -19,7 +19,8 @@ public class ItemGlow : MonoBehaviour
     private Camera playerCamera;
     private GameObject currentHighlightedItem;
     private Color originalColor;
-    private Renderer itemRenderer;
+    //private Renderer itemRenderer;
+    private Outline outline;
     private bool isLookingAtItem = false;
 
     void Start()
@@ -93,20 +94,17 @@ public class ItemGlow : MonoBehaviour
 
     void HighlightItem(GameObject item)
     {
-        itemRenderer = item.GetComponent<Renderer>();
-        if (itemRenderer != null)
-        {
-            currentHighlightedItem = item;
-            originalColor = itemRenderer.material.color;
-            itemRenderer.material.color = highlightColor;
-        }
+        currentHighlightedItem = item;
+        outline = item.GetComponent<Outline>();
+        outline.enabled = true;
     }
 
     void RemoveHighlight()
     {
-        if (currentHighlightedItem != null && itemRenderer != null)
+
+        if (currentHighlightedItem != null && outline != null)
         {
-            itemRenderer.material.color = originalColor;
+            outline.enabled = false;
             currentHighlightedItem = null;
         }
     }
