@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: CristalMat
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 2100000, guid: 1c91132b4be935b489587a2b1af7ef67, type: 2}
+  m_Parent: {fileID: 2100000, guid: 1a601656762df5d4088d4cf1d3b47cc1, type: 2}
   m_ModifiedSerializedProperties: 18
   m_ValidKeywords:
   - _ALPHAMODULATE_ON
@@ -64,6 +64,6 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.59542185, g: 0.90943396, b: 0.8819293, a: 1}
     - _Color: {r: 0.5954219, g: 0.90943396, b: 0.8819293, a: 1}
-    - _EmissionColor: {r: 0.3443729, g: 2.433571, b: 1.9267386, a: 1}
+    - _EmissionColor: {r: 0.086093225, g: 0.6083928, b: 0.48168465, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
