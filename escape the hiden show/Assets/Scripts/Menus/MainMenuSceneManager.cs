@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
-public class MainMenu : MonoBehaviour
+public class MainMenuSceneManager : MonoBehaviour
 {
 
     [SerializeField] private Image fadeImage;
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("TutorialRoom");
     }
 
     public void OnQuitButton()
