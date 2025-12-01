@@ -13,6 +13,7 @@ public class SpeakerPuzzleManager : MonoBehaviour
 
     [SerializeField] private TextMeshPro textDisplay;
     [SerializeField] private float freqCorrecta = 100.55f;
+    [SerializeField] private AudioSource speakerSound;
     private float freqDisplay;
 
     [SerializeField] private DisplayDial displayScript;
@@ -52,6 +53,7 @@ public class SpeakerPuzzleManager : MonoBehaviour
                 {
                     displayScript.enabled = false;
                     textDisplay.text = "Correcto";
+                    speakerSound.Play();
                     StartCoroutine(RomperCaja());
 
                     Debug.Log("Algo se resquebraja");
@@ -66,7 +68,7 @@ public class SpeakerPuzzleManager : MonoBehaviour
 
     private IEnumerator RomperCaja()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(15f);
 
         Destroy(requiredObject1);
 
