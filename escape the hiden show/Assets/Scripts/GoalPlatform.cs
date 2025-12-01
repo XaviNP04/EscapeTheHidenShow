@@ -30,6 +30,6 @@ public class GoalPlatform : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Almacen");
     }
 }

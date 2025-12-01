@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class MainMenuSceneManager : MonoBehaviour
@@ -8,6 +9,13 @@ public class MainMenuSceneManager : MonoBehaviour
 
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 1f;
+
+    public Button defaultButton;
+
+     void Start()
+    {
+        EventSystem.current.SetSelectedGameObject(defaultButton.gameObject);
+    }
 
     public void OnPlayButton()
     {
