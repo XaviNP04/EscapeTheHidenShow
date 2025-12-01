@@ -27,7 +27,7 @@ public class ViewedTarget : MonoBehaviour
 
         collider = GetComponent<Collider>();
 
-        // Deshabilitar su Collier (opcional, pero ayuda a que no bloquee otros Raycasts):
+        // Deshabilitar su Collier:
         collider.enabled = false; 
 
         // Posicionar en el punto de inspección:
