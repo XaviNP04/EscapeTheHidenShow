@@ -11,6 +11,7 @@ public class MontarManiqui : MonoBehaviour
     [SerializeField] private string brazoIzqID;
     [SerializeField] private string piernaIzqID;
 
+    private bool completo = false;
     private int partesActivas = 0;
     [SerializeField] private GameObject tarjetaAcceso;
 
@@ -28,7 +29,7 @@ public class MontarManiqui : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !completo)
         {
             Vector3 point = new Vector3(_camera.pixelWidth / 2, _camera.pixelHeight / 2, 0);
             Ray ray = _camera.ScreenPointToRay(point);
@@ -62,13 +63,14 @@ public class MontarManiqui : MonoBehaviour
                         Inventory.instance.RemoveItemByID(piernaIzqID);
                         partesActivas++;
                     }
+
+                    if (partesActivas == 4)
+                    {
+                        tarjetaAcceso.SetActive(true);
+                        completo = true;
+                    }
                 }
             }
-        }
-
-        if (partesActivas == 4)
-        {
-            tarjetaAcceso.SetActive(true);
         }
     }
 
