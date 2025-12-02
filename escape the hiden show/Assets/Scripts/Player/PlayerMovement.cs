@@ -25,6 +25,15 @@ public class PlayerMovement : MonoBehaviour
     private float alturaNormal;
     private float alturaCamaraNormal;
 
+    private AudioSource audio;
+    private float timer = 0f;
+    [SerializeField] private float walkInterval = 0.2f;
+    [SerializeField] private float runInterval = 0.6f;
+    private float interval;
+
+    Vector3 lastPosition;
+    float horizontalSpeed;
+
     void Start()
     {
         _charController = GetComponent<CharacterController>();
@@ -34,7 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
         alturaNormal = _charController.height;
         alturaCamaraNormal = _camera.transform.localPosition.y;
+
+        audio = GetComponent<AudioSource>();
+
+        lastPosition = transform.position;
     }
+
 
     bool CanUncrouch()
     {
@@ -101,17 +115,51 @@ public class PlayerMovement : MonoBehaviour
 
         // correr
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
+
+
+        // Sonido andar
+        if (isRunning)
+        {
+            interval = walkInterval;
+        } else
+        {
+            interval = runInterval;
+        }
+
         float currentSpeed = isRunning ? runSpeed : walkSpeed;
 
+
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
+
         movement = Vector3.ClampMagnitude(movement, 1.0f) * currentSpeed;
 
-        // gravedad (para escaleras)
-        velocity.y += gravity * Time.deltaTime;
+        Vector3 horizontalMovement = transform.position - lastPosition;
+        horizontalMovement.y = 0; // ignore vertical
+
+        horizontalSpeed = horizontalMovement.magnitude / Time.deltaTime;
+
+        if (horizontalSpeed > 5)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= interval)
+            {
+                audio.Play();
+                timer = 0f;
+            }
+        }
+
+        lastPosition = transform.position;
+
+
+
+    // gravedad (para escaleras)
+    velocity.y += gravity * Time.deltaTime;
 
         _charController.Move(velocity * Time.deltaTime);
 
         movement = transform.TransformDirection(movement); // convierte desde el sistema local al global
         _charController.Move(movement * Time.deltaTime); // no movemos el transform para que se calculen las colisiones 
+
     } 
 }

@@ -96,7 +96,7 @@ public class ItemGlow : MonoBehaviour
     {
         currentHighlightedItem = item;
         outline = item.GetComponent<Outline>();
-        outline.enabled = true;
+        if (outline != null) outline.enabled = true;
     }
 
     void RemoveHighlight()
