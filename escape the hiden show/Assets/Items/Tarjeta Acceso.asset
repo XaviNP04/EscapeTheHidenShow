@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214725c4994b2f94db10d6f55a44e1fc, type: 3}
   m_Name: Tarjeta Acceso
   m_EditorClassIdentifier: 
-  itemID: 
-  displayName: 
+  itemID: tarjetaAcc
+  displayName: Tarjeta
   icon: {fileID: 0}

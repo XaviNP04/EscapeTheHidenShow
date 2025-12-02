@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 3537107031228473238}
   - component: {fileID: 5310010864251574158}
   - component: {fileID: 6240634166577815199}
+  - component: {fileID: 5133181570915940460}
+  - component: {fileID: 8928299477106905743}
+  - component: {fileID: 8970681381700579810}
   m_Layer: 0
   m_Name: locker_rusty_a
   m_TagString: Untagged
@@ -131,6 +134,58 @@ LODGroup:
     - renderer: {fileID: 3537107031228473238}
     - renderer: {fileID: 7454253636217819728}
   m_Enabled: 1
+--- !u!136 &5133181570915940460
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054787158269474114}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Height: 4.129528
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.064764, z: 0.000019133091}
+--- !u!208 &8928299477106905743
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054787158269474114}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.794, y: 2.065, z: 0.666}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.065, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &8970681381700579810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054787158269474114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba331eeb6ba45b4eb4bb2e01f95aace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 2225458999297678622}
 --- !u!1 &2225458999297678622
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +199,7 @@ GameObject:
   - component: {fileID: 7454253636217819728}
   - component: {fileID: 1390585851685275822}
   - component: {fileID: 4068890671680688558}
+  - component: {fileID: 1729826396306141654}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -236,7 +292,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -263,3 +319,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1729826396306141654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225458999297678622}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 3.9992976, z: 0.15}
+  m_Center: {x: 0.69235796, y: 2.0743835, z: 0.0032471733}
