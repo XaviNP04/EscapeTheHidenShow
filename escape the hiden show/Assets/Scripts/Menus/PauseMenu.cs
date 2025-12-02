@@ -10,11 +10,6 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        if (pausePanel == null)
-            Debug.LogError("❌ PausePanel NO ASIGNADO en el inspector.");
-
-        else
-            Debug.Log("✔ PausePanel detectado correctamente.");
 
         pausePanel.SetActive(false);
 
@@ -35,7 +30,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        Debug.Log("▶ Reanudando juego...");
 
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
@@ -50,7 +44,6 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        Debug.Log("⏸ Pausando juego...");
 
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
@@ -71,7 +64,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();
-        Debug.Log("Quit game.");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 }
