@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: key_001
   displayName: LLave de la celda
-  icon: {fileID: 21300000, guid: 95c054c8cc1223b71b3a39eca90484c5, type: 3}
+  icon: {fileID: 21300000, guid: d8b5cc4b41c12ac498e6d85f00772177, type: 3}

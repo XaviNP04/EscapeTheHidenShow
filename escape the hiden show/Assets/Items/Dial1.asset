@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: dial1
   displayName: Dial 1
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 52588c3ad4c90664a801a46c78e47a28, type: 3}
