@@ -7,13 +7,13 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pausePanel;
-    public GameObject controlsPanel;  // <--- NUEVO
+    public GameObject controlsPanel;
     public MonoBehaviour playerController;
 
     void Start()
     {
         pausePanel.SetActive(false);
-        controlsPanel.SetActive(false); // <--- OCULTO AL EMPEZAR
+        controlsPanel.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -23,7 +23,6 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Si está en el panel de controles, volver al menú de pausa
             if (controlsPanel.activeSelf)
             {
                 CloseControls();
@@ -65,13 +64,11 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
     }
 
-    // -----------------------------
-    //      CONTROLES
-    // -----------------------------
+
     public void OpenControls()
     {
-        controlsPanel.SetActive(true);   // Muestra imagen + botón volver
-        pausePanel.SetActive(false);     // Oculta el menú de pausa
+        controlsPanel.SetActive(true);
+        pausePanel.SetActive(false);
     }
 
     public void CloseControls()
@@ -80,9 +77,7 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(true);
     }
 
-    // -----------------------------
-    //    BOTONES DEL MENÚ
-    // -----------------------------
+
     public void Restart()
     {
         Time.timeScale = 1f;
