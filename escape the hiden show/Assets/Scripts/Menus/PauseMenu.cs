@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
     public GameObject pausePanel;
+    public GameObject controlsPanel;  // <--- NUEVO
     public MonoBehaviour playerController;
 
     void Start()
     {
-
         pausePanel.SetActive(false);
+        controlsPanel.SetActive(false); // <--- OCULTO AL EMPEZAR
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -21,7 +23,12 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("ESC PRESIONADO");
+            // Si está en el panel de controles, volver al menú de pausa
+            if (controlsPanel.activeSelf)
+            {
+                CloseControls();
+                return;
+            }
 
             if (GameIsPaused) Resume();
             else Pause();
@@ -30,8 +37,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-
         pausePanel.SetActive(false);
+        controlsPanel.SetActive(false);
+
         Time.timeScale = 1f;
         GameIsPaused = false;
 
@@ -44,8 +52,9 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-
         pausePanel.SetActive(true);
+        controlsPanel.SetActive(false);
+
         Time.timeScale = 0f;
         GameIsPaused = true;
 
@@ -56,6 +65,24 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
     }
 
+    // -----------------------------
+    //      CONTROLES
+    // -----------------------------
+    public void OpenControls()
+    {
+        controlsPanel.SetActive(true);   // Muestra imagen + botón volver
+        pausePanel.SetActive(false);     // Oculta el menú de pausa
+    }
+
+    public void CloseControls()
+    {
+        controlsPanel.SetActive(false);
+        pausePanel.SetActive(true);
+    }
+
+    // -----------------------------
+    //    BOTONES DEL MENÚ
+    // -----------------------------
     public void Restart()
     {
         Time.timeScale = 1f;
