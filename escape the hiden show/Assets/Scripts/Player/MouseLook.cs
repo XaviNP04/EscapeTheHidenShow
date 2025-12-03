@@ -31,6 +31,9 @@ public class MouseLook : MonoBehaviour
         if (DialogueSystem.dialogueActive)
             return;
 
+        if (PauseMenu.GameIsPaused)
+            return;
+
         if (axes == RotationAxes.MouseX)
         {
             transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityHor, 0);
