@@ -7,6 +7,7 @@ public class GoalPlatform : MonoBehaviour
 {
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 1f;
+    [SerializeField] private string newScene;
 
     void OnTriggerEnter(Collider other)
     {
@@ -30,6 +31,6 @@ public class GoalPlatform : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene("Almacen");
+        SceneManager.LoadScene(newScene);
     }
 }
