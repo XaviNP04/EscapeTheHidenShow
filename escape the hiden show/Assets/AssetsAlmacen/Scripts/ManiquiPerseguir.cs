@@ -22,7 +22,7 @@ public class ManiquiPerseguir : MonoBehaviour
         maniqui = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         playerStats = player.GetComponent<PlayerStats>();
-        activo = true;
+        activo = false;
         persecucion = false;
         cambio = false;
     }
@@ -71,5 +71,10 @@ public class ManiquiPerseguir : MonoBehaviour
             animator.SetBool("Activo", activo);
             animator.SetBool("Persecucion", persecucion);
         }
+    }
+
+    public void Activar()
+    {
+        activo = true;
     }
 }
