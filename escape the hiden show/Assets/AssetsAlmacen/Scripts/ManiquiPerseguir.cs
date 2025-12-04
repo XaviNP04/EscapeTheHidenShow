@@ -6,9 +6,10 @@ public class ManiquiPerseguir : MonoBehaviour
     private NavMeshAgent maniqui;
     private Animator animator;
     public bool activo;
-    private bool persecucion;
-    private bool cambio;
+    [SerializeField] private bool persecucion;
+    [SerializeField] private bool cambio;
     [SerializeField] private float velocidad = 10.5f;
+    [SerializeField] private bool escondido;
     [SerializeField] private Transform player;
     private PlayerStats playerStats;
     private Vector3 posicionOriginal;
@@ -30,6 +31,7 @@ public class ManiquiPerseguir : MonoBehaviour
     {
         if (activo && !playerStats.hidden)
         {
+            escondido = playerStats.hidden;
             maniqui.speed = velocidad;
             persecucion = true;
             animator.SetBool("Activo", activo);
@@ -38,6 +40,7 @@ public class ManiquiPerseguir : MonoBehaviour
         } 
         else if (activo && playerStats.hidden)
         {
+            escondido = playerStats.hidden;
             maniqui.speed = velocidad / 2;
             if (persecucion)
             {
@@ -66,6 +69,7 @@ public class ManiquiPerseguir : MonoBehaviour
             persecucion = false;
             cambio = false;
             animator.SetBool("Activo", activo);
+            animator.SetBool("Persecucion", persecucion);
         }
     }
 }

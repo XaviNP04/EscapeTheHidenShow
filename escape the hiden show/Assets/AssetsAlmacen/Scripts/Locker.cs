@@ -6,7 +6,7 @@ public class Locker : MonoBehaviour
     [SerializeField] private GameObject door;
     private bool isClosed;
     private Animator animatorDoor;
-    private bool playerIn;
+    [SerializeField] private bool playerIn;
     private PlayerStats stats;
 
     private Camera _camera;
@@ -33,7 +33,6 @@ public class Locker : MonoBehaviour
         if (stats != null)
         {
             playerIn = false;
-            stats.HideInLocker(false);
         }
     }
 
@@ -56,9 +55,9 @@ public class Locker : MonoBehaviour
             }
         }
 
-        if (stats != null)
+        if (playerIn)
         {
-            if (isClosed && playerIn)
+            if (isClosed)
                 stats.HideInLocker(true);
             else
                 stats.HideInLocker(false);
