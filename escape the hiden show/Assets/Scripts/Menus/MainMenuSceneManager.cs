@@ -22,6 +22,11 @@ public class MainMenuSceneManager : MonoBehaviour
        
         } else
             EventSystem.current.SetSelectedGameObject(null);
+
+        if (isTransitioning)
+        {
+            creditsPanel.SetActive(false);
+        }
     }
 
     public void OnPlayButton()
