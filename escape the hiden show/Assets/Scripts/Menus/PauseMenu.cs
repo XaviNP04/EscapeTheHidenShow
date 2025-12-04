@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
@@ -9,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pausePanel;
     public GameObject controlsPanel;
     public MonoBehaviour playerController;
+    public GameObject slotsContainer;
 
     void Start()
     {
@@ -38,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     {
         pausePanel.SetActive(false);
         controlsPanel.SetActive(false);
+        slotsContainer.SetActive(true);
 
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -53,6 +56,7 @@ public class PauseMenu : MonoBehaviour
     {
         pausePanel.SetActive(true);
         controlsPanel.SetActive(false);
+        slotsContainer.SetActive(false);
 
         Time.timeScale = 0f;
         GameIsPaused = true;

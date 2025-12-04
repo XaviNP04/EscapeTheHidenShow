@@ -14930,6 +14930,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864663102}
   m_CullTransparentMesh: 1
+--- !u!1 &1876129663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3281788375249887613, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+  m_PrefabInstance: {fileID: 3743979586345702076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1887425004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 792224689333581554, guid: eca733468ad1e6343a15e3b93d1edd1f, type: 3}
@@ -16061,6 +16066,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: -->FirstPersonPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 775634886685099900, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1739438714785674305, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642737587416700800, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: slotsContainer
+      value: 
+      objectReference: {fileID: 1876129663}
     - target: {fileID: 3907483283731069017, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -16180,6 +16197,10 @@ PrefabInstance:
     - target: {fileID: 6849282902429558754, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904585016394550955, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -14.9
       objectReference: {fileID: 0}
     - target: {fileID: 8103771564868897564, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
       propertyPath: m_AnchorMax.y
