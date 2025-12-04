@@ -9,17 +9,10 @@ public class FadeIn : MonoBehaviour
     [SerializeField] private Transform _player;
 
     private PlayerMovement playerMovement;
-    private MouseLook mouseLookX;
-    private MouseLook mouseLookY;
 
     void Start()
     {
         playerMovement = _player.GetComponent<PlayerMovement>();
-
-        mouseLookX = _player.GetComponent<MouseLook>();
-
-        Camera playerCamera = _player.GetComponentInChildren<Camera>();
-        mouseLookY = playerCamera.GetComponent<MouseLook>();
  
         StartCoroutine(FadeInRoutine());
     }
@@ -28,8 +21,6 @@ public class FadeIn : MonoBehaviour
     {
         if (playerMovement != null)
             playerMovement.enabled = false;
-            mouseLookX.enabled = false;
-            mouseLookY.enabled = false;
 
         float elapsedTime = 0f;
         Color color = fadeImage.color;
@@ -49,8 +40,6 @@ public class FadeIn : MonoBehaviour
 
         if (playerMovement != null)
             playerMovement.enabled = true;
-            mouseLookX.enabled = true;
-            mouseLookY.enabled = true;
     }
 
 }

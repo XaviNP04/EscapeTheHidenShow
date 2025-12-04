@@ -10969,7 +10969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 473193634}
   fadeDuration: 2
-  newScene: Almacen
+  newScene: TestAlmacen
 --- !u!65 &1483365412
 BoxCollider:
   m_ObjectHideFlags: 0

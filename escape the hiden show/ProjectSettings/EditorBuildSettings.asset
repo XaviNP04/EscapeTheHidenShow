@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Almacen.unity
     guid: 1566f087d26be6d4f9bd2c44bd2577e7
+  - enabled: 1
+    path: Assets/TestScenes/TestAlmacen.unity
+    guid: 4cf71962014c3cd4db461e6188901380
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
