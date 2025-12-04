@@ -16078,6 +16078,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2260030188782377942, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f8a2523edc3723418e8277010161ca2, type: 3}
     - target: {fileID: 2642737587416700800, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
       propertyPath: slotsContainer
       value: 
