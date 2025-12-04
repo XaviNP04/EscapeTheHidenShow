@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: piernaI
   displayName: Pierna
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1308230b431a40a76ae9f34cefe46fb0, type: 3}

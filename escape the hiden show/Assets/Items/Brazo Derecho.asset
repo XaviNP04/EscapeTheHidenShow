@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: brazoD
   displayName: Brazo
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 229048b774a4f50fb87073fd32d7e97f, type: 3}
