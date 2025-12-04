@@ -7,7 +7,6 @@ public class ItemGlow : MonoBehaviour
 {
     [Header("Highlight Settings")]
     public float maxDistance = 10f;
-    public Color highlightColor = Color.grey;
 
     [Header("UI Settings")]
     public GameObject interactionUI; 
