@@ -3776,13 +3776,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560810166}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   m_LocalPosition: {x: 0.01521481, y: 0.608734, z: 1.0000364}
   m_LocalScale: {x: 0.19010684, y: 3.8021355, z: 0.19010678}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1300581126}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 90}
 --- !u!64 &560810168
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16137,6 +16137,34 @@ PrefabInstance:
     - target: {fileID: 3701689716806095975, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753058962877851609, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753058962877851609, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753058962877851609, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753058962877851609, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753058962877851609, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753058962877851609, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 130.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753058962877851609, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3907483283731069017, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
       propertyPath: m_AnchorMax.y
