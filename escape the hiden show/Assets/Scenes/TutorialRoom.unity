@@ -9019,6 +9019,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152167339}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1187645146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8038827347963421643, guid: 1a6d83bae6d38234ab41eef47430853a, type: 3}
+  m_PrefabInstance: {fileID: 917281383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f02b9eaf2d71442b4f3110ede19e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1196244986 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1827952888736980183, guid: 1a6d83bae6d38234ab41eef47430853a, type: 3}
@@ -10615,6 +10626,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1827952888736980183, guid: 1a6d83bae6d38234ab41eef47430853a, type: 3}
   m_PrefabInstance: {fileID: 1103421745}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1417502741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8038827347963421643, guid: 1a6d83bae6d38234ab41eef47430853a, type: 3}
+  m_PrefabInstance: {fileID: 1369940511}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f02b9eaf2d71442b4f3110ede19e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1430542256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13635,7 +13657,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: cfcfff37e8f51614cb92c924944250b3, type: 3}
   m_Resource: {fileID: 8300000, guid: cfcfff37e8f51614cb92c924944250b3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -15097,11 +15119,15 @@ MonoBehaviour:
   - {fileID: 1802765714}
   - {fileID: 1523134958}
   - {fileID: 1465247510}
+  - {fileID: 1187645146}
+  - {fileID: 1417502741}
   correctDirections:
   - Up
   - Down
   - Left
   - Right
+  - Center
+  - Center
   obj: {fileID: 170435455}
 --- !u!1 &1950309711
 GameObject:

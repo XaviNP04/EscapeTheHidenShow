@@ -3,15 +3,15 @@ using UnityEngine;
 public class LeverPuzzleManager : MonoBehaviour
 {
     [Header("Configura las 4 palancas")]
-    public LeverInteractV2[] levers = new LeverInteractV2[4];
+    public LeverInteractV2[] levers = new LeverInteractV2[6];
 
     [Header("Direcciones correctas (Up, Down, Left, Right)")]
-    public string[] correctDirections = new string[4];
+    public string[] correctDirections = new string[6];
 
     [Header("Puerta a abrir")]
     public ResolutionAction obj;
 
-    private string[] currentDirections = new string[4];
+    private string[] currentDirections = new string[6];
 
     void Start()
     {
