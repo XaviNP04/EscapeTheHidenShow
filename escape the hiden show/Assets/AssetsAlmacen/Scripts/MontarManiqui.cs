@@ -10,6 +10,8 @@ public class MontarManiqui : MonoBehaviour
     [SerializeField] private string brazoDerID;
     [SerializeField] private string brazoIzqID;
     [SerializeField] private string piernaIzqID;
+    [SerializeField] private GameObject luz;
+    private Material mat;
 
     private bool completo = false;
     private int partesActivas = 0;
@@ -25,6 +27,8 @@ public class MontarManiqui : MonoBehaviour
         brazoIzq.SetActive(false);
         piernaIzq.SetActive(false);
         tarjetaAcceso.SetActive(false);
+
+        mat = luz.GetComponent<Renderer>().material;
     }
 
     void Update()
@@ -66,6 +70,7 @@ public class MontarManiqui : MonoBehaviour
 
                     if (partesActivas == 4)
                     {
+                        mat.EnableKeyword("_EMISSION");
                         tarjetaAcceso.SetActive(true);
                         completo = true;
                     }

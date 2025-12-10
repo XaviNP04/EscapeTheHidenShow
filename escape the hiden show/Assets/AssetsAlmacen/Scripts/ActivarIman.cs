@@ -6,6 +6,7 @@ public class ActivarIman : MonoBehaviour, IPointerDownHandler
     [SerializeField] private Transform mecanismo;
     [SerializeField] private GameObject iman;
     [SerializeField] private float velocidad;
+    [SerializeField] private MoverIman[] botones;
     private ImanContacto contacto;
     private bool bajando = false;
     private Vector3 iPos;
@@ -30,12 +31,14 @@ public class ActivarIman : MonoBehaviour, IPointerDownHandler
             mat.EnableKeyword("_EMISSION");
             bajando = true;
             pulsado = true;
+
+            foreach (MoverIman b in botones)
+                b.enabled = false;
         }
     }
 
     void Update()
     {
-        mat.DisableKeyword("_EMISSION");
         iPos = mecanismo.position;
 
         if (bajando)
@@ -61,6 +64,10 @@ public class ActivarIman : MonoBehaviour, IPointerDownHandler
             if (iPos.y == 15f)
             {
                 pulsado = false;
+                mat.DisableKeyword("_EMISSION");
+
+                foreach (MoverIman b in botones)
+                    b.enabled = true;
             }
         }
     }

@@ -16,6 +16,9 @@ public class ManiquiPerseguir : MonoBehaviour
     [SerializeField] private float rangoBusqueda = 100f;
     [SerializeField] private Transform centroBusqueda;
 
+    [SerializeField] private AudioSource correr;
+    [SerializeField] private AudioSource caminar;
+
     void Start()
     {
         posicionOriginal = transform.position;
@@ -31,6 +34,11 @@ public class ManiquiPerseguir : MonoBehaviour
     {
         if (activo && !playerStats.hidden)
         {
+            if (!correr.isPlaying)
+            {
+                correr.Play();
+                caminar.Stop();
+            }
             escondido = playerStats.hidden;
             maniqui.speed = velocidad;
             persecucion = true;
@@ -40,6 +48,11 @@ public class ManiquiPerseguir : MonoBehaviour
         } 
         else if (activo && playerStats.hidden)
         {
+            if (!caminar.isPlaying)
+            {
+                correr.Stop();
+                caminar.Play();
+            }
             escondido = playerStats.hidden;
             maniqui.speed = velocidad / 2;
             if (persecucion)
@@ -65,6 +78,9 @@ public class ManiquiPerseguir : MonoBehaviour
 
         if (!maniqui.pathPending && maniqui.remainingDistance <= maniqui.stoppingDistance)
         {
+            caminar.Stop();
+            correr.Stop();
+
             activo = false;
             persecucion = false;
             cambio = false;

@@ -6,7 +6,7 @@ public class Caja : MonoBehaviour
     [SerializeField] private bool correcta = false;
     private Animator animator;
     private Camera _camera;
-
+    [SerializeField] private ActivacionManiquis control;
 
     void Start()
     {
@@ -28,6 +28,8 @@ public class Caja : MonoBehaviour
                 {
                     cerrada = false;
                     animator.enabled = true;
+
+                    if (!correcta) control.activacionExtra();
                 }
             }
         }

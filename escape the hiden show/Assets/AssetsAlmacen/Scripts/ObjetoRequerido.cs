@@ -5,7 +5,10 @@ public class ObjetoRequerido : MonoBehaviour
     [SerializeField] private string objectID;
     Camera _camera;
     private Renderer visibilidad;
-    private Collider collider;
+    private Collider collider; 
+    
+    [SerializeField] private GameObject luz;
+    private Material mat;
 
     void Start()
     {
@@ -13,6 +16,8 @@ public class ObjetoRequerido : MonoBehaviour
         visibilidad = GetComponent<Renderer>();
         visibilidad.enabled = false;
         collider = GetComponent<Collider>();
+
+        mat = luz.GetComponent<Renderer>().material;
     }
     
     void Update()
@@ -29,6 +34,7 @@ public class ObjetoRequerido : MonoBehaviour
                 {
                     if (Inventory.instance.HasItem(objectID))
                     {
+                        mat.EnableKeyword("_EMISSION");
                         visibilidad.enabled = true;
                         Inventory.instance.RemoveItemByID(objectID);
                         collider.enabled = false;

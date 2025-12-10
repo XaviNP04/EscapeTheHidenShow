@@ -1,35 +1,35 @@
 using UnityEngine;
+using System.Collections;
 
 public class ImanContacto : MonoBehaviour
 {
-    public bool obtenido { get; private set; }
-    public bool choque { get; private set; }
+    public bool obtenido;
+    public bool choque;
     [SerializeField] private GameObject requiredObject;
     [SerializeField] private Transform puntoIman;
     [SerializeField] private GameObject puntoImantado;
+    private Collider reqCollider;
     private Collider collider;
     private Rigidbody rb;
-    private bool soltado;
 
     void Start()
     {
         obtenido = false;
         choque = false;
-        soltado = false;
-        collider = requiredObject.GetComponent<Collider>();
+        reqCollider = requiredObject.GetComponent<Collider>();
+        collider = GetComponent<Collider>();
         rb = puntoImantado.GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == collider && !soltado)
+        if (other == reqCollider && !obtenido)
         {
             obtenido = true;
             rb.isKinematic = true;
             puntoImantado.transform.SetParent(puntoIman);
             puntoImantado.transform.localPosition = Vector3.zero;
-            soltado = false;
-
+            collider.enabled = false;
         } else
         {
             choque = true;
@@ -41,6 +41,7 @@ public class ImanContacto : MonoBehaviour
         if (other == collider)
         {
             obtenido = false;
+            Debug.Log("SALE CABEZA");
         }
         else
         {
@@ -51,8 +52,14 @@ public class ImanContacto : MonoBehaviour
     public void SoltarObjeto()
     {
         puntoImantado.transform.SetParent(null, true);
+        StartCoroutine(conectarIman());
         rb.isKinematic = false;
-        soltado = true;
         obtenido = false;
+    }
+
+    private IEnumerator conectarIman()
+    {
+        yield return new WaitForSeconds(1);
+        collider.enabled = true;
     }
 }

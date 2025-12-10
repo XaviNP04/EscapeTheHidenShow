@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correcta: 0
+  control: {fileID: 0}
 --- !u!95 &618868454574456631
 Animator:
   serializedVersion: 7
