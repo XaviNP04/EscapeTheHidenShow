@@ -12,6 +12,11 @@ public class PauseMenu : MonoBehaviour
     public MonoBehaviour playerController;
     public GameObject slotsContainer;
 
+    public Camera camera;
+    private InspectObject inspectObject;
+    private ViewPuzzle viewPuzzle;
+
+
     void Start()
     {
         pausePanel.SetActive(false);
@@ -19,11 +24,14 @@ public class PauseMenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        inspectObject = camera.GetComponent<InspectObject>();
+        viewPuzzle = camera.GetComponent<ViewPuzzle>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !inspectObject.inspecting && !viewPuzzle.inspecting)
         {
             if (controlsPanel.activeSelf)
             {

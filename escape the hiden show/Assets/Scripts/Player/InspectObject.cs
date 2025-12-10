@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class InspectObject : MonoBehaviour
 {
@@ -7,8 +8,10 @@ public class InspectObject : MonoBehaviour
     private PlayerMovement movement;
     private MouseLook mouselook;
     private MouseLook mouselookCam;
-    private bool inspecting;
+    public bool inspecting;
     [SerializeField] private Transform inspectionPoint;
+
+    public GameObject paraInspeccionarPanel;
 
     void Start()
     {
@@ -34,6 +37,7 @@ public class InspectObject : MonoBehaviour
                 var target = hitObject.GetComponent<InspectedTarget>();
                 if (target != null)
                 {
+                    paraInspeccionarPanel.SetActive(true);
                     movement.enabled = false;
                     mouselook.enabled = false;
                     mouselookCam.enabled = false;
@@ -45,6 +49,7 @@ public class InspectObject : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && inspecting)
         {
+            paraInspeccionarPanel.SetActive(false);
             movement.enabled = true;
             mouselook.enabled = true;
             mouselookCam.enabled = true;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class ViewPuzzle : MonoBehaviour
 {
@@ -7,7 +8,9 @@ public class ViewPuzzle : MonoBehaviour
     private PlayerMovement movement;
     private MouseLook mouselook;
     private MouseLook mouselookCam;
-    private bool inspecting;
+    public bool inspecting;
+
+    public GameObject paraInspeccionarPanel;
 
     void Start()
     {
@@ -33,6 +36,7 @@ public class ViewPuzzle : MonoBehaviour
                 var target = hitObject.GetComponent<ViewedTarget>();
                 if (target != null)
                 {
+                    paraInspeccionarPanel.SetActive(true);
                     movement.enabled = false;
                     mouselook.enabled = false;
                     mouselookCam.enabled = false;
@@ -44,6 +48,7 @@ public class ViewPuzzle : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && inspecting)
         {
+            paraInspeccionarPanel.SetActive(false);
             movement.enabled = true;
             mouselook.enabled = true;
             mouselookCam.enabled = true;

@@ -20,6 +20,8 @@ public class ClickAction : MonoBehaviour
             requiredObject.transform.localRotation = Quaternion.identity;
             requiredObject.transform.localScale = Vector3.one;
 
+            requiredObject.tag = "Untagged";
+
             Inventory.instance.RemoveItemByID(objectID);
 
             requiredObject.GetComponent<PickupItem>().enabled = false;
