@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class ManiquiPerseguir : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class ManiquiPerseguir : MonoBehaviour
 
     [SerializeField] private AudioSource correr;
     [SerializeField] private AudioSource caminar;
+
+    [SerializeField] private AudioSource screamSource;
 
     void Start()
     {
@@ -92,5 +95,12 @@ public class ManiquiPerseguir : MonoBehaviour
     public void Activar()
     {
         activo = true;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        screamSource.Play();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

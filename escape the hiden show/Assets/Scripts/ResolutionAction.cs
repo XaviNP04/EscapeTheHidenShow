@@ -9,11 +9,19 @@ public class ResolutionAction : MonoBehaviour
     public float moveDistance = 1f;
     private bool moved = false;
 
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void Action()
     {
         if (!moved)
         {
             moved = true;
+            audioSource.Play(0);
             Vector3 moveVector = GetMoveDirection();
             transform.position += moveVector * moveDistance;
         }
