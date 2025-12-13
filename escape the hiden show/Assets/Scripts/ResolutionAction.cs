@@ -9,7 +9,7 @@ public class ResolutionAction : MonoBehaviour
     public float moveDistance = 1f;
     private bool moved = false;
 
-    AudioSource audioSource;
+    private AudioSource audioSource;
 
     void Start()
     {
