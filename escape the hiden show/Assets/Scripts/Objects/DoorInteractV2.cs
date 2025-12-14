@@ -14,11 +14,14 @@ public class DoorInteractV2 : MonoBehaviour
     private Quaternion openRotation;
     private Camera playerCamera;
 
+    private AudioSource doorSource;
+
     void Start()
     {
         closedRotation = doorHinge.localRotation;
         openRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
         playerCamera = Camera.main;
+        doorSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -54,6 +57,7 @@ public class DoorInteractV2 : MonoBehaviour
                     Inventory.instance.RemoveItemByID(requiredKeyID);
                     isOpen = true;
                     alreadyUnlocked = true;
+                    doorSource.Play(0);
                     Debug.Log("Puerta abierta con llave!");
                     gameObject.tag = "Untagged";
                 }
@@ -67,6 +71,7 @@ public class DoorInteractV2 : MonoBehaviour
     public void OpenDoor()
     {
         if (alreadyUnlocked) return;
+
         isOpen = true;
         alreadyUnlocked = true;
 

@@ -22,9 +22,6 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(false);
         controlsPanel.SetActive(false);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         inspectObject = camera.GetComponent<InspectObject>();
         viewPuzzle = camera.GetComponent<ViewPuzzle>();
     }
@@ -93,6 +90,7 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
+        Resume();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
