@@ -61,6 +61,10 @@ public class Locker : MonoBehaviour
                 stats.HideInLocker(true);
             else
                 stats.HideInLocker(false);
+        } 
+        else if(stats != null)
+        {
+            stats.HideInLocker(false);
         }
     }
 }

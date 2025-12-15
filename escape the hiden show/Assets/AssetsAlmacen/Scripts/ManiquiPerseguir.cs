@@ -99,8 +99,12 @@ public class ManiquiPerseguir : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        screamSource.Play();
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerStats stats = other.GetComponent<PlayerStats>();
+        if(stats != null)
+        {
+            screamSource.Play();
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
