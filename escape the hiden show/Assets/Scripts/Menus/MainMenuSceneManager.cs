@@ -14,6 +14,12 @@ public class MainMenuSceneManager : MonoBehaviour
 
     private bool isTransitioning = false;
 
+    void Awake()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     void Update()
     {
         if (!creditsPanel.activeInHierarchy) {

@@ -18,13 +18,6 @@ public class MouseLook : MonoBehaviour
     public float maxPitchAngle = 90.0f;
     private float pitchAngle = 0; // cabeceo (pitch) actual
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked; // deja el ratón en el centro de la ventana
-        Cursor.visible = false;
-    }
-
-
     // Update is called once per frame
     void Update()
     {

@@ -10,9 +10,10 @@ public class DialogueTrigger : MonoBehaviour
 
     async Task Start()
     {
-        if (autoStartOnSceneLoad)
-            
-            TriggerDialogue();
+        if (!autoStartOnSceneLoad)
+            return;
+
+        TriggerDialogue();
     }
 
     public void TriggerDialogue()

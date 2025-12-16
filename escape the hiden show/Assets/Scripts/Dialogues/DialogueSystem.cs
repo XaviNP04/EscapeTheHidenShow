@@ -20,15 +20,18 @@ public class DialogueSystem : MonoBehaviour
     private bool isTyping = false;
     private bool skipTyping = false;
 
-    public static bool dialogueActive = false;
+    public static bool dialogueActive = false;    
 
     void Awake()
     {
         instance = this;
+
     }
 
     void Update()
     {
+
+
         if (!panel.activeSelf) return;
 
         if (Input.GetMouseButtonDown(0))
@@ -42,21 +45,22 @@ public class DialogueSystem : MonoBehaviour
                 NextLine();
             }
         }
+
+
     }
 
 
     public void StartDialogue(string[] newLines)
     {
+
         lines = newLines;
         index = 0;
 
         panel.SetActive(true);
         dialogueActive = true;
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
         StartCoroutine(TypeLine());
+        
     }
 
 
@@ -101,8 +105,5 @@ public class DialogueSystem : MonoBehaviour
     {
         panel.SetActive(false);
         dialogueActive = false;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 }

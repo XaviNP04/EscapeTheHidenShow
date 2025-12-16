@@ -2914,10 +2914,9 @@ MonoBehaviour:
   dialogueLines:
   - Vaya...
   - Parece que ya te has levantado.
-  - "No sabes que haces aqu\xED, \xBFverdad?"
-  - "Creo que tendr\xE1s bastante tiempo para averiguarlo aqu\xED encerrado."
-  - "As\xED que yo me pondr\xEDa c\xF3modo y mirar\xEDa la tele un rato, ja, ja,
-    ja"
+  - "No sabes que haces aqui, \xBFverdad?"
+  - Creo que tendras bastante tiempo para averiguarlo aqui encerrado.
+  - Asi que yo me pondria comodo y miraria la tele un rato, ja, ja, ja
   autoStartOnSceneLoad: 1
 --- !u!114 &339722798
 MonoBehaviour:
@@ -4569,7 +4568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4954249734721646, guid: b9f6e7b74ed89574598f26acba3afa74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4954249734721646, guid: b9f6e7b74ed89574598f26acba3afa74, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5589,7 +5588,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.602
+      value: 0.034
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -14040,8 +14039,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cfcfff37e8f51614cb92c924944250b3, type: 3}
   m_Resource: {fileID: 8300000, guid: cfcfff37e8f51614cb92c924944250b3, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14614,7 +14613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1864663104}
-  fadeDuration: 2
+  fadeDuration: 1
   _player: {fileID: 324131428}
 --- !u!1 &1756569485
 GameObject:
@@ -16470,6 +16469,10 @@ PrefabInstance:
     - target: {fileID: 263795137627022241, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
       propertyPath: m_Name
       value: -->FirstPersonPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701689716806095975, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.999878
       objectReference: {fileID: 0}
     - target: {fileID: 3907483283731069017, guid: e3cd69c2b67ea1f4f814c5a54c2e0ccb, type: 3}
       propertyPath: m_AnchorMax.y
