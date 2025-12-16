@@ -22,6 +22,8 @@ public class ManiquiPerseguir : MonoBehaviour
 
     [SerializeField] private AudioSource screamSource;
 
+    private Collider collider;
+
     void Start()
     {
         posicionOriginal = transform.position;
@@ -31,6 +33,8 @@ public class ManiquiPerseguir : MonoBehaviour
         activo = false;
         persecucion = false;
         cambio = false;
+        collider = GetComponent<Collider>();
+        collider.isTrigger = false;
     }
 
     void Update()
@@ -45,6 +49,12 @@ public class ManiquiPerseguir : MonoBehaviour
             escondido = playerStats.hidden;
             maniqui.speed = velocidad;
             persecucion = true;
+
+            if (collider == null)
+                collider = GetComponent<Collider>();
+            collider.isTrigger = true;
+
+
             animator.SetBool("Activo", activo);
             animator.SetBool("Persecucion", persecucion);
             maniqui.SetDestination(player.position);
@@ -89,12 +99,21 @@ public class ManiquiPerseguir : MonoBehaviour
             cambio = false;
             animator.SetBool("Activo", activo);
             animator.SetBool("Persecucion", persecucion);
+
+            if (collider == null)
+                collider = GetComponent<Collider>();
+            collider.isTrigger = false;
         }
     }
 
     public void Activar()
     {
         activo = true;
+
+        if (collider == null)
+            collider = GetComponent<Collider>();
+        Debug.Log("COMIN FOR YA");
+        collider.isTrigger = true;
     }
 
     void OnTriggerEnter(Collider other)
