@@ -53,7 +53,7 @@ public class ObjetoRequerido : MonoBehaviour
 
                         Debug.Log("Parece que se necesita una llave para usar el panel");
 
-                        if (intentosSinLlave % 5 == 0)
+                        if (intentosSinLlave == 1 || intentosSinLlave % 5 == 0)
                         {
                             if (DialogueSystem.instance != null)
                             {

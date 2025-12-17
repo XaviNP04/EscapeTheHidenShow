@@ -7136,7 +7136,7 @@ MonoBehaviour:
   objectID: llaveim
   luz: {fileID: 451901494}
   dialogueLines:
-  - Parece que se necesita una llave para abrir el panel
+  - Parece que se necesita una llave para abrir el panel.
 --- !u!65 &217850601
 BoxCollider:
   m_ObjectHideFlags: 0
