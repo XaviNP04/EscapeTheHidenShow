@@ -307,7 +307,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.35
   m_Height: 4.129528
   m_Direction: 1
   m_Center: {x: 0, y: 2.064764, z: 0.000019133091}
@@ -321,11 +321,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.794, y: 2.065, z: 0.666}
+  m_Extents: {x: 0.745, y: 2.065, z: 0.205}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 2.065, z: 0}
+  m_Center: {x: 0, y: 2.065, z: -0.47}
   m_TimeToStationary: 0.5
 --- !u!114 &904200551182745872
 MonoBehaviour:
@@ -340,3 +340,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 6230793410992884946}
+  playerIn: 0
