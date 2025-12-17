@@ -10,6 +10,13 @@ public class ObjetoRequerido : MonoBehaviour
     [SerializeField] private GameObject luz;
     private Material mat;
 
+
+    [Header("Diálogo al fallar")]
+    [TextArea(2, 5)]
+    [SerializeField] private string[] dialogueLines;
+
+    private int intentosSinLlave = 0;
+
     void Start()
     {
         _camera = Camera.main;
@@ -42,7 +49,17 @@ public class ObjetoRequerido : MonoBehaviour
                     }
                     else
                     {
+                        intentosSinLlave++;
+
                         Debug.Log("Parece que se necesita una llave para usar el panel");
+
+                        if (intentosSinLlave % 5 == 0)
+                        {
+                            if (DialogueSystem.instance != null)
+                            {
+                                DialogueSystem.instance.StartDialogue(dialogueLines);
+                            }
+                        }
                     }
                 }
             }
