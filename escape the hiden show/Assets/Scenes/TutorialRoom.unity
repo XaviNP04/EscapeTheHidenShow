@@ -13717,6 +13717,7 @@ GameObject:
   - component: {fileID: 1668273402}
   - component: {fileID: 1668273403}
   - component: {fileID: 1668273404}
+  - component: {fileID: 1668273405}
   m_Layer: 0
   m_Name: Altavoz_Prueba
   m_TagString: ImportantItem
@@ -14124,6 +14125,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1668273405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668273396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44898e6e18d86554f9b1b7759148dd2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - Hace falta algo para poner la frecuencia, no?
+  - Tal vez con algun tipo de rueda podrias indicar la frecuencia.
+  onlyOnce: 0
+  triggerEveryXInspections: 5
 --- !u!1001 &1700874437
 PrefabInstance:
   m_ObjectHideFlags: 0

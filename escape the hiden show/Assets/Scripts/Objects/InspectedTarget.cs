@@ -41,6 +41,13 @@ public class InspectedTarget : MonoBehaviour
 
         isInspecting = true;
 
+        InspectionDialogueTrigger dialogue = GetComponent<InspectionDialogueTrigger>();
+
+        if (dialogue != null)
+        {
+            dialogue.OnInspected();
+        }
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
