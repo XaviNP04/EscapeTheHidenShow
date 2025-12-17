@@ -20,6 +20,12 @@ public class GoalPlatform : MonoBehaviour
 
     private IEnumerator TransitionRoutine()
     {
+
+        if (DeathTracker.Instance != null)
+        {
+            DeathTracker.Instance.Shutdown();
+        }
+
         float elapsedTime = 0f;
         Color color = fadeImage.color;
 

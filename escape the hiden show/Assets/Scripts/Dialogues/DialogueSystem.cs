@@ -20,11 +20,18 @@ public class DialogueSystem : MonoBehaviour
     private bool isTyping = false;
     private bool skipTyping = false;
 
+    private int numDeaths = 0;
+
     public static bool dialogueActive = false;    
 
     void Awake()
     {
         instance = this;
+
+        if (DeathTracker.Instance != null)
+        {
+            numDeaths = DeathTracker.Instance.numDeaths;
+        }
 
     }
 
@@ -32,7 +39,7 @@ public class DialogueSystem : MonoBehaviour
     {
 
 
-        if (!panel.activeSelf) return;
+        if (!panel.activeSelf || numDeaths > 0) return;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -52,14 +59,19 @@ public class DialogueSystem : MonoBehaviour
 
     public void StartDialogue(string[] newLines)
     {
+        if (numDeaths < 1)
+        {
+            lines = newLines;
+            index = 0;
 
-        lines = newLines;
-        index = 0;
+            panel.SetActive(true);
+            dialogueActive = true;
 
-        panel.SetActive(true);
-        dialogueActive = true;
-
-        StartCoroutine(TypeLine());
+            StartCoroutine(TypeLine());
+        } else
+        {
+            panel.SetActive(false);
+        }
         
     }
 

@@ -121,6 +121,7 @@ public class ManiquiPerseguir : MonoBehaviour
         PlayerStats stats = other.GetComponent<PlayerStats>();
         if(stats != null)
         {
+            DeathTracker.Instance.IncrementDeathCount();
             screamSource.Play();
             Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
