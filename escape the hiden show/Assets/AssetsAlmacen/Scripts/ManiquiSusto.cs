@@ -25,7 +25,7 @@ public class ManiquiSusto : MonoBehaviour
 
     void Update()
     {
-        if (maniqui.remainingDistance <= maniqui.stoppingDistance)
+        if (!maniqui.pathPending && maniqui.remainingDistance <= maniqui.stoppingDistance)
         {
             caminar.Stop();
             animator.SetBool("Activo", false);

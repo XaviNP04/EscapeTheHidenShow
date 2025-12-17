@@ -5,6 +5,7 @@ public class Caja : MonoBehaviour
     private bool cerrada = true;
     [SerializeField] private bool correcta = false;
     private Animator animator;
+    private Collider collider;
     private Camera _camera;
     [SerializeField] private ActivacionManiquis control;
 
@@ -12,6 +13,7 @@ public class Caja : MonoBehaviour
     {
         _camera = Camera.main;
         animator = GetComponent<Animator>();
+        collider = GetComponent<Collider>();
     }
 
     void Update()
@@ -28,6 +30,7 @@ public class Caja : MonoBehaviour
                 {
                     cerrada = false;
                     animator.enabled = true;
+                    collider.enabled = false;
 
                     if (!correcta) control.activacionExtra();
                 }
