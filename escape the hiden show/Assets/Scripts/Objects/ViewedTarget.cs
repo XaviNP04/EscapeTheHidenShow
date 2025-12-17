@@ -12,16 +12,6 @@ public class ViewedTarget : MonoBehaviour
     private Vector3 originalScale;
     private Transform originalParent;
     private Collider collider;
-    private GameObject Player;
-    void Start()
-    {
-        Player = GameObject.FindWithTag("player");
-        if (Player == null)
-        {
-            Debug.LogWarning("Player with tag 'player' not found in scene.");
-        }
-    }
-
     [SerializeField] private Transform viewPoint;
 
     public void View()
