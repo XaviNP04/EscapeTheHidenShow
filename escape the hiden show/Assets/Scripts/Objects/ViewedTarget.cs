@@ -6,12 +6,21 @@ public class ViewedTarget : MonoBehaviour
 
     private bool isInspecting = false;
 
-    // Para guardar la posición y rotación originales al iniciar la inspección.
+    // Para guardar la posiciï¿½n y rotaciï¿½n originales al iniciar la inspecciï¿½n.
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private Vector3 originalScale;
     private Transform originalParent;
     private Collider collider;
+    private GameObject Player;
+    void Start()
+    {
+        Player = GameObject.FindWithTag("player");
+        if (Player == null)
+        {
+            Debug.LogWarning("Player with tag 'player' not found in scene.");
+        }
+    }
 
     [SerializeField] private Transform viewPoint;
 
@@ -30,10 +39,10 @@ public class ViewedTarget : MonoBehaviour
         // Deshabilitar su Collier:
         collider.enabled = false; 
 
-        // Posicionar en el punto de inspección:
+        // Posicionar en el punto de inspecciï¿½n:
         _camera.transform.SetParent(viewPoint); // Lo hace hijo del InspectionPoint
         _camera.transform.localPosition = Vector3.zero; // Posiciona el objeto exactamente en el punto
-        _camera.transform.localRotation = Quaternion.identity; // Opcional: Resetea su rotación local
+        _camera.transform.localRotation = Quaternion.identity; // Opcional: Resetea su rotaciï¿½n local
         _camera.transform.localScale = Vector3.one; // Forzar a que la escala sea 1 para evitar posibles deformaciones
 
         isInspecting = true;
@@ -63,7 +72,7 @@ public class ViewedTarget : MonoBehaviour
                 // Volver a habilitar su Colisionador:
                 collider.enabled = true; 
 
-                // Desactivar el modo de inspección y desbloquear al jugador:
+                // Desactivar el modo de inspecciï¿½n y desbloquear al jugador:
                 isInspecting = false;
 
                 Cursor.lockState = CursorLockMode.Locked;
