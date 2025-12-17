@@ -13056,8 +13056,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a1fb726e037274340aaba5ffcb1a593c, type: 3}
   m_Resource: {fileID: 8300000, guid: a1fb726e037274340aaba5ffcb1a593c, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_PlayOnAwake: 1
+  m_Volume: 0.596
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -34334,7 +34334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ca6705684c1c44588c2aac667992cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionText: Activar
+  interactionText: ACTIVAR (REQUIERE TARJETA)
 --- !u!114 &1273282716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48547,6 +48547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PiernaIzqM
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e2d2719027dd214f9cdb652bdd37fc8, type: 3}
+      propertyPath: m_TagString
+      value: ImportantItem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -48560,6 +48564,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e2d2719027dd214f9cdb652bdd37fc8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2096709929}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e2d2719027dd214f9cdb652bdd37fc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2096709934}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e2d2719027dd214f9cdb652bdd37fc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2096709933}
   m_SourcePrefab: {fileID: 100100000, guid: 1e2d2719027dd214f9cdb652bdd37fc8, type: 3}
 --- !u!1 &2096709920 stripped
 GameObject:
@@ -48631,6 +48641,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2096709933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096709920}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &2096709934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096709920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ca6705684c1c44588c2aac667992cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: COGER
 --- !u!1001 &2097762371
 PrefabInstance:
   m_ObjectHideFlags: 0
