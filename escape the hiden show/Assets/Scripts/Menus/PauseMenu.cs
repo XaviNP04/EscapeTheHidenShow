@@ -96,6 +96,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
+        DeathTracker.Instance.Shutdown();
         Time.timeScale = 1f;
         Resume();
         SceneManager.LoadScene("MainMenu");
