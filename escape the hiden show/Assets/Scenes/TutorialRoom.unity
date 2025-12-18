@@ -14041,7 +14041,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: cfcfff37e8f51614cb92c924944250b3, type: 3}
   m_Resource: {fileID: 8300000, guid: cfcfff37e8f51614cb92c924944250b3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14138,10 +14138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueLines:
-  - Hace falta algo para poner la frecuencia, no?
-  - Tal vez con algun tipo de rueda podrias indicar la frecuencia.
-  onlyOnce: 0
-  triggerEveryXInspections: 5
+  - Parece que faltan los diales para indicar la frecuencia.
+  onlyOnce: 1
+  triggerEveryXInspections: 1
 --- !u!1001 &1700874437
 PrefabInstance:
   m_ObjectHideFlags: 0

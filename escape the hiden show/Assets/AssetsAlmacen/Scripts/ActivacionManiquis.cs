@@ -8,6 +8,9 @@ public class ActivacionManiquis : MonoBehaviour
     [SerializeField] private float rango = 0.5f;
     private ManiquiPerseguir[] perseguir;
 
+    private bool sistemaActivo = true; 
+    private Coroutine bucleActivacion;
+
     void Start()
     {
         perseguir = new ManiquiPerseguir[maniquis.Length];
@@ -16,12 +19,38 @@ public class ActivacionManiquis : MonoBehaviour
             perseguir[i] = maniquis[i].GetComponent<ManiquiPerseguir>();
         }
 
-        StartCoroutine(activarManiqui());
+        bucleActivacion = StartCoroutine(activarManiqui());
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            sistemaActivo = !sistemaActivo;
+
+            if(sistemaActivo)
+            {
+                if (bucleActivacion == null)
+                {
+                    bucleActivacion = StartCoroutine(activarManiqui());
+                    Debug.Log("Sistema de maniquís activado");
+                }
+            }
+            else
+            {
+                if (bucleActivacion != null)
+                {
+                    StopCoroutine(bucleActivacion); 
+                    bucleActivacion = null;
+                    Debug.Log("Sistema de maniquís desactivado");
+                }
+            }
+        }
     }
 
     private IEnumerator activarManiqui()
     {
-        while(true)
+        while(sistemaActivo)
         {
             float espera = timer + Random.Range(-rango, rango);
             yield return new WaitForSeconds(espera);

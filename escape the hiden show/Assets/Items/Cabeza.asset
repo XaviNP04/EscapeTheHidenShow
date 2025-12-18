@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: cabeza
   displayName: Cabeza
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: eb54335226a31486a8fa17da7ab4e789, type: 3}

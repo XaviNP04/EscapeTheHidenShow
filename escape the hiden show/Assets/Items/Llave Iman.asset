@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: llaveim
   displayName: Llave
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7ba37a700c7be7e4489885e8a323df23, type: 3}
