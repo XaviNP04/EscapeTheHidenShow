@@ -33,6 +33,8 @@ public class Locker : MonoBehaviour
         if (stats != null)
         {
             playerIn = false;
+            stats.HideInLocker(false);
+            stats = null;
         }
     }
 

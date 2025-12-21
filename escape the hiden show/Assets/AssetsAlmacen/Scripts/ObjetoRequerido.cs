@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ObjetoRequerido : MonoBehaviour
 {
+    [SerializeField] private GameObject requiredObject;
     [SerializeField] private string objectID;
     Camera _camera;
     private Renderer visibilidad;
@@ -20,7 +21,7 @@ public class ObjetoRequerido : MonoBehaviour
     void Start()
     {
         _camera = Camera.main;
-        visibilidad = GetComponent<Renderer>();
+        visibilidad = requiredObject.GetComponent<Renderer>();
         visibilidad.enabled = false;
         collider = GetComponent<Collider>();
 

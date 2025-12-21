@@ -10,7 +10,8 @@ public class LuzMorse : MonoBehaviour
     private float[] secuencia3;
     private float[] secuencia4;
 
-    private static float[][] codigo;
+    private float[][] codigo;
+    [SerializeField] private Material mat;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class LuzMorse : MonoBehaviour
         codigo = new float[][] { secuencia1, secuencia2, secuencia3, secuencia4 };
 
         luzMorse.enabled = false;
+        mat = GetComponent<Renderer>().material;
         StartCoroutine(EsperaComienzo(5f));
     }
 
@@ -44,7 +46,9 @@ public class LuzMorse : MonoBehaviour
                 yield return new WaitForSeconds(duracionPunto * 2);
             }
 
+            mat.DisableKeyword("_EMISSION");
             yield return new WaitForSeconds(duracionPunto * 6);
+            mat.EnableKeyword("_EMISSION");
         }
     }
 

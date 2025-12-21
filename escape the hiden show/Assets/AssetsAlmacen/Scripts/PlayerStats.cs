@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public bool hidden { get; private set; }
+    [SerializeField] private bool escondido = false;
 
     void Start()
     {
@@ -12,5 +13,6 @@ public class PlayerStats : MonoBehaviour
     public void HideInLocker(bool value)
     {
         hidden = value;
+        escondido = value;
     }
 }

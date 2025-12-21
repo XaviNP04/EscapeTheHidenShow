@@ -44,14 +44,13 @@ public class MoverIman : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     else
                         bPos.x = 14f;
                     brazo.position = bPos;
-                        break;
+                    break;
                 case "abajo":
                     if (bPos.x - velocidad > -20f)
                         bPos.x = bPos.x - velocidad;
                     else
                         bPos.x = -20f;
                     brazo.position = bPos;
-                        break;
                     break;
                 case "derecha":
                     if (iPos.z - velocidad > -31f)
@@ -59,7 +58,6 @@ public class MoverIman : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     else
                         iPos.z = -31f;
                     iman.position = iPos;
-                        break;
                     break;
                 case "izquierda":
                     if (iPos.z + velocidad < 1f)
@@ -67,7 +65,7 @@ public class MoverIman : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     else
                         iPos.z = 1f;
                     iman.position = iPos;
-                        break;
+                    break;
             }
         }
     }

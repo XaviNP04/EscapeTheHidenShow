@@ -165,6 +165,7 @@ MonoBehaviour:
   centroBusqueda: {fileID: 0}
   correr: {fileID: 0}
   caminar: {fileID: 0}
+  screamSource: {fileID: 0}
 --- !u!136 &1327227673206486035
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -184,7 +185,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.35
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1.9, z: 0}

@@ -18,7 +18,7 @@ public class SpeakerPuzzleManager : MonoBehaviour
 
     [SerializeField] private DisplayDial displayScript;
 
-    static private bool resuelto = false;
+    private bool resuelto = false;
 
     void Start()
     {

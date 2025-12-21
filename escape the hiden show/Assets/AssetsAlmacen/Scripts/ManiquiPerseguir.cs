@@ -39,6 +39,7 @@ public class ManiquiPerseguir : MonoBehaviour
 
     void Update()
     {
+        escondido = playerStats.hidden;
         if (activo && !playerStats.hidden)
         {
             if (!correr.isPlaying)
@@ -46,7 +47,6 @@ public class ManiquiPerseguir : MonoBehaviour
                 correr.Play();
                 caminar.Stop();
             }
-            escondido = playerStats.hidden;
             maniqui.speed = velocidad;
             persecucion = true;
 
