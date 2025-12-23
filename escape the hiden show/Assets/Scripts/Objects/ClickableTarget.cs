@@ -3,7 +3,7 @@ using UnityEngine;
 public class ClickableTarget : MonoBehaviour
 {
     public Texture2D cursorTexture;
-    public Vector2 hotSpot = Vector2.zero;
+    public Vector2 hotSpot = new Vector2(10f, 0f);
 
     // Se llama cuando el ratón entra en el Collider del objeto
     void OnMouseEnter()

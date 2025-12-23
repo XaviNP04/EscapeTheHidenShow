@@ -10,6 +10,9 @@ public class ViewPuzzle : MonoBehaviour
     private MouseLook mouselookCam;
     public bool inspecting;
 
+    [SerializeField] private GameObject cuerpoPlayer;
+    private CharacterController controller;
+
     public GameObject paraInspeccionarPanel;
 
     void Start()
@@ -19,6 +22,7 @@ public class ViewPuzzle : MonoBehaviour
         movement = personaje.GetComponent<PlayerMovement>();
         mouselook = personaje.GetComponent<MouseLook>();
         mouselookCam = GetComponent<MouseLook>();
+        controller = personaje.GetComponent<CharacterController>();
         inspecting = false;
     }
 
@@ -37,9 +41,11 @@ public class ViewPuzzle : MonoBehaviour
                 if (target != null)
                 {
                     paraInspeccionarPanel.SetActive(true);
+                    cuerpoPlayer.SetActive(false);
                     movement.enabled = false;
                     mouselook.enabled = false;
                     mouselookCam.enabled = false;
+                    controller.enabled = false;
                     inspecting = true;
                     target.View();
                 }
@@ -49,9 +55,11 @@ public class ViewPuzzle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && inspecting)
         {
             paraInspeccionarPanel.SetActive(false);
+            cuerpoPlayer.SetActive(true);
             movement.enabled = true;
             mouselook.enabled = true;
             mouselookCam.enabled = true;
+            controller.enabled = true;
             inspecting = false;
         }
     }

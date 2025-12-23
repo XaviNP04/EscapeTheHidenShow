@@ -507,6 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1ee6c8521effb4ca2252154e716b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escondido: 0
 --- !u!1 &513429791745081439
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,6 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspecting: 0
+  cuerpoPlayer: {fileID: 4027683783679822523}
   paraInspeccionarPanel: {fileID: 2278601775044787358}
 --- !u!114 &6891938588894387506
 MonoBehaviour:

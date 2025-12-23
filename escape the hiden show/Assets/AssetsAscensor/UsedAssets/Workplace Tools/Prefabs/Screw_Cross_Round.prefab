@@ -52,8 +52,129 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 86fb0c882e9516049bdd6f1a81d3bfde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 86fb0c882e9516049bdd6f1a81d3bfde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2873871629867387694}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 86fb0c882e9516049bdd6f1a81d3bfde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5097952880875358225}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 86fb0c882e9516049bdd6f1a81d3bfde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 395031032011489244}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 86fb0c882e9516049bdd6f1a81d3bfde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9028432302273360043}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 86fb0c882e9516049bdd6f1a81d3bfde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4697485826714447647}
   m_SourcePrefab: {fileID: 100100000, guid: 86fb0c882e9516049bdd6f1a81d3bfde, type: 3}
+--- !u!1 &7649458238844593307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 86fb0c882e9516049bdd6f1a81d3bfde, type: 3}
+  m_PrefabInstance: {fileID: 7649458238844691003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2873871629867387694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649458238844593307}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.07591829, y: 0.07591827, z: 0.2}
+  m_Center: {x: -0.00003566221, y: 0.000025268644, z: -0.009417074}
+--- !u!95 &5097952880875358225
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649458238844593307}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8da2250722d98104cbe93373b683ab32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &395031032011489244
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649458238844593307}
+  serializedVersion: 4
+  m_Mass: 0.5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &9028432302273360043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649458238844593307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec96f2615b4ad6544978072c9e6cd283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: screwD
+--- !u!114 &4697485826714447647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649458238844593307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91ba9353c5f949469b179c9917a892a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 0575a259207fb8440b050f9f4656cf22, type: 3}
+  hotSpot: {x: 10, y: 0}

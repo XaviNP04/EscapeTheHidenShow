@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6123108858793260238}
+  - component: {fileID: -957370275355763703}
+  - component: {fileID: 7176814043284491372}
+  - component: {fileID: -2994971784824850634}
   m_Layer: 0
   m_Name: centroPipeCurve
   m_TagString: Untagged
@@ -32,6 +35,58 @@ Transform:
   - {fileID: 9068586814135933718}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &-957370275355763703
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266989711333239139}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.25, y: 0.4, z: 0.4}
+  m_Center: {x: 0, y: 0.08, z: -0.065}
+--- !u!114 &7176814043284491372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266989711333239139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fd8c9ce18f5e347a6d68bb5cfec8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estadoActual: 0
+  estadoSol: 0
+  esRecta: 0
+  esSolucion: 0
+  manager: {fileID: 0}
+--- !u!114 &-2994971784824850634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266989711333239139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91ba9353c5f949469b179c9917a892a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 0575a259207fb8440b050f9f4656cf22, type: 3}
+  hotSpot: {x: 10, y: 0}
 --- !u!1001 &3808436417473244724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40,9 +95,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6123108858793260238}
     m_Modifications:
+    - target: {fileID: 1068852917227378633, guid: 64bdf1d6be393a6438046d93f8bbe3e6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680215469975742691, guid: 64bdf1d6be393a6438046d93f8bbe3e6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712030085142644230, guid: 64bdf1d6be393a6438046d93f8bbe3e6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4777069858930700184, guid: 64bdf1d6be393a6438046d93f8bbe3e6, type: 3}
       propertyPath: m_Name
       value: PipeMiddleShortAngled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777069858930700184, guid: 64bdf1d6be393a6438046d93f8bbe3e6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5260308915320157474, guid: 64bdf1d6be393a6438046d93f8bbe3e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -82,6 +153,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5260308915320157474, guid: 64bdf1d6be393a6438046d93f8bbe3e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713446031252448829, guid: 64bdf1d6be393a6438046d93f8bbe3e6, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

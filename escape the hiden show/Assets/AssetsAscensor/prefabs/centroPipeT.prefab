@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7214463306993246038}
+  - component: {fileID: 133695939092370611}
+  - component: {fileID: 2051574556238292655}
+  - component: {fileID: 495611545650393479}
   m_Layer: 0
   m_Name: centroPipeT
   m_TagString: Untagged
@@ -32,6 +35,58 @@ Transform:
   - {fileID: 5617835309649580124}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!65 &133695939092370611
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284114466643553343}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.25, y: 0.6, z: 0.45}
+  m_Center: {x: 0, y: 0.005, z: 0.08}
+--- !u!114 &2051574556238292655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284114466643553343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fd8c9ce18f5e347a6d68bb5cfec8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estadoActual: 0
+  estadoSol: 0
+  esRecta: 1
+  esSolucion: 0
+  manager: {fileID: 0}
+--- !u!114 &495611545650393479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284114466643553343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91ba9353c5f949469b179c9917a892a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 0575a259207fb8440b050f9f4656cf22, type: 3}
+  hotSpot: {x: 10, y: 0}
 --- !u!1001 &2030724958251017550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40,6 +95,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7214463306993246038}
     m_Modifications:
+    - target: {fileID: 699516177250528568, guid: 0b2130717614b2e4297232c91d1fc4f1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495330167173714480, guid: 0b2130717614b2e4297232c91d1fc4f1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5897493278787187986, guid: 0b2130717614b2e4297232c91d1fc4f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -83,6 +146,18 @@ PrefabInstance:
     - target: {fileID: 6526782698024693672, guid: 0b2130717614b2e4297232c91d1fc4f1, type: 3}
       propertyPath: m_Name
       value: PipeMiddleShort3Way
+      objectReference: {fileID: 0}
+    - target: {fileID: 6526782698024693672, guid: 0b2130717614b2e4297232c91d1fc4f1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592624651632161142, guid: 0b2130717614b2e4297232c91d1fc4f1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491102185873852699, guid: 0b2130717614b2e4297232c91d1fc4f1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
