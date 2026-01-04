@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3601793758901229652}
   - component: {fileID: 8346731662130412259}
   - component: {fileID: 8840910429453695963}
+  - component: {fileID: 362340685547998925}
+  - component: {fileID: 9072090030975913536}
   m_Layer: 0
   m_Name: Boton
   m_TagString: Untagged
@@ -108,7 +110,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!114 &8840910429453695963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,3 +125,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valor: 1
   manager: {fileID: 0}
+--- !u!114 &362340685547998925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716907188914188356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ca6705684c1c44588c2aac667992cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: APRETAR
+--- !u!114 &9072090030975913536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716907188914188356}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
