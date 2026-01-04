@@ -13,9 +13,12 @@ public class GirarPipe : MonoBehaviour, IPointerDownHandler
     [SerializeField] private PipesManager manager;
     private Quaternion rotacionObjetivo;
 
+    private AudioSource rotateSound;
+
     void Start()
     {
         rotacionObjetivo = transform.localRotation;
+        rotateSound = GetComponent<AudioSource>();
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -23,10 +26,12 @@ public class GirarPipe : MonoBehaviour, IPointerDownHandler
         Debug.Log("Girando");
         estadoActual = (estadoActual + 1) % 4;
         rotacionObjetivo = Quaternion.Euler(estadoActual * 90, 0, 0);
-        
+        rotateSound.Play();
+
+
         if (esSolucion)
         {
-            if(esRecta)
+            if (esRecta)
             {
                 correcta = estadoActual == estadoSol || estadoActual == (estadoSol + 2) % 4;
             }

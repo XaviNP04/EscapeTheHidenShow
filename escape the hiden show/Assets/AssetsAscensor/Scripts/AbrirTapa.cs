@@ -8,6 +8,10 @@ public class AbrirTapa : MonoBehaviour, IPointerDownHandler
     [SerializeField] private GameObject[] tornillos;
     private Desatornillar[] estados;
     private Animator animator;
+
+    private AudioSource abrirSound;
+    private bool soundPlayed = false;
+
     void Start()
     {
         estados = new Desatornillar[tornillos.Length];
@@ -16,7 +20,9 @@ public class AbrirTapa : MonoBehaviour, IPointerDownHandler
             estados[i] = tornillos[i].GetComponent<Desatornillar>();
         }
         animator = GetComponent<Animator>();
-    }
+
+        abrirSound = GetComponent<AudioSource>();
+}
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -39,6 +45,13 @@ public class AbrirTapa : MonoBehaviour, IPointerDownHandler
             }
 
             animator.enabled = true;
+
+            if (!soundPlayed && abrirSound != null)
+            {
+                abrirSound.Play();
+                soundPlayed = true;
+            }
+
             StartCoroutine(soltar());
         }
     }

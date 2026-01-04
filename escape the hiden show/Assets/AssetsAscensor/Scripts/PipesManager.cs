@@ -6,6 +6,8 @@ public class PipesManager : MonoBehaviour
     [SerializeField] private GameObject screwdriver;
     [SerializeField] private GirarPipe[] pipes;
 
+    [SerializeField] private AudioSource beepSound;
+
     public void comprobar()
     {
         bool resuelto = true;
@@ -22,6 +24,7 @@ public class PipesManager : MonoBehaviour
         if (resuelto)
         {
             Debug.Log("Resuelto");
+            beepSound.Play();
             resolver();
         }
     }

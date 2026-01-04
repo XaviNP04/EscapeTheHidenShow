@@ -8,6 +8,9 @@ public class AbrirShield : MonoBehaviour, IPointerDownHandler
     [SerializeField] private GameObject puerta;
     private Quaternion rotacionObjetivo;
 
+    [SerializeField] private AudioSource beepSound;
+    [SerializeField] private AudioSource abrirSound;
+
     void Start()
     {
         rotacionObjetivo = puerta.transform.rotation;
@@ -19,12 +22,15 @@ public class AbrirShield : MonoBehaviour, IPointerDownHandler
         {
             Inventory.instance.RemoveItemByID(objectID);
             rotacionObjetivo = Quaternion.Euler(0, 180, 90);
+            abrirSound.Play();
         }
     }
 
     public void activar()
     {
         activado = true;
+        beepSound.Play();
+
     }
 
     void Update()
