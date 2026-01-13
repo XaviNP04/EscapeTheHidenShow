@@ -8,6 +8,7 @@ public class ActivarPalanca : MonoBehaviour, IPointerDownHandler
     [SerializeField] private GameObject luzOn;
     [SerializeField] private GameObject luzOff;
     [SerializeField] private GameObject panelBraille;
+    [SerializeField] private GameObject botonesAs;
     private Material matOn;
     private Material matOff;
     private Quaternion rotacionObjetivo;
@@ -18,6 +19,7 @@ public class ActivarPalanca : MonoBehaviour, IPointerDownHandler
         matOn = luzOn.GetComponent<Renderer>().material;
         matOff = luzOff.GetComponent<Renderer>().material;
         rotacionObjetivo = transform.localRotation;
+        botonesAs.SetActive(false);
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -38,6 +40,7 @@ public class ActivarPalanca : MonoBehaviour, IPointerDownHandler
             matOn.EnableKeyword("_EMISSION");
             rotacionObjetivo = Quaternion.Euler(-90, 0, 0);
             panelBraille.SetActive(true);
+            botonesAs.SetActive(true);
         }
         Debug.Log("Intentando");
         matOff.EnableKeyword("_EMISSION");

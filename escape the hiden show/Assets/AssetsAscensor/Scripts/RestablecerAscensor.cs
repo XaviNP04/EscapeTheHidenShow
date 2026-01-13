@@ -1,10 +1,16 @@
 using UnityEngine;
+using System.Collections;
 
 public class RestablecerAscensor : MonoBehaviour
 {
     private Camera _camera;
     private bool pulsado = false;
     private Material mat;
+    [SerializeField] private Temporizador temp;
+    [SerializeField] private AudioSource audio;
+    [SerializeField] private AudioSource audioAmb;
+    [SerializeField] private Animator animator;
+    [SerializeField] private Light[] luces;
     [SerializeField] private ActivarBoton[] botones;
     [SerializeField] private string codigoCorrecto = "7458";
     [SerializeField] private string codigo = "";
@@ -32,10 +38,20 @@ public class RestablecerAscensor : MonoBehaviour
                     {
                         Debug.Log("Correcto");
                         pulsado = true;
+                        temp.detenerTemporizador();
+                        audio.Play();
+                        audioAmb.Stop();
+
+                        foreach (Light l in luces)
+                        {
+                            l.enabled = false;
+                        }
+                        StartCoroutine(abrirPuerta());
                     } 
                     else
                     {
                         mat.DisableKeyword("_EMISSION");
+                        codigo = "";
                         foreach (ActivarBoton b in botones)
                         {
                             b.reiniciar();
@@ -44,6 +60,12 @@ public class RestablecerAscensor : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator abrirPuerta()
+    {
+        yield return new WaitForSeconds(13f);
+        animator.SetBool("open", true);
     }
 
     public void anadirNumero(string num)
