@@ -7890,7 +7890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 617067032}
   fadeDuration: 11
-  newScene: TestAlmacen
+  newScene: Ascensor
 --- !u!65 &245991766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11276,23 +11276,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5209965837201267072, guid: 85613a3a0f37dab48bc7c0408ab0ca41, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5
+      value: 0.54167527
       objectReference: {fileID: 0}
     - target: {fileID: 5209965837201267072, guid: 85613a3a0f37dab48bc7c0408ab0ca41, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5
+      value: -0.45451945
       objectReference: {fileID: 0}
     - target: {fileID: 5209965837201267072, guid: 85613a3a0f37dab48bc7c0408ab0ca41, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.50000006
+      value: 0.54167527
       objectReference: {fileID: 0}
     - target: {fileID: 5209965837201267072, guid: 85613a3a0f37dab48bc7c0408ab0ca41, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.50000006
+      value: 0.45451948
       objectReference: {fileID: 0}
     - target: {fileID: 5209965837201267072, guid: 85613a3a0f37dab48bc7c0408ab0ca41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 6488207570149361417, guid: 85613a3a0f37dab48bc7c0408ab0ca41, type: 3}
       propertyPath: m_Name
