@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 18a6bbe91f3fc7241bba5c9b1df3e3e7
+AssetOrigin:
+  serializedVersion: 1
+  productId: 86242
+  packageName: Workplace Tools
+  packageVersion: 1.2
+  assetPath: Assets/Workplace Tools/Mesh/Screwdriver_Cross.fbx
+  uploadId: 729009
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable:
@@ -138,10 +145,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 86242
-  packageName: Workplace Tools
-  packageVersion: 1.2
-  assetPath: Assets/Workplace Tools/Mesh/Screwdriver_Cross.fbx
-  uploadId: 729009

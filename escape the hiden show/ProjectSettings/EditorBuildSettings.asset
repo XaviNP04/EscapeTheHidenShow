@@ -16,13 +16,16 @@ EditorBuildSettings:
     guid: 65f24336710632b4985bfe0de441e491
   - enabled: 1
     path: Assets/Scenes/Almacen.unity
-    guid: 1566f087d26be6d4f9bd2c44bd2577e7
+    guid: 1930bec005ecfac498e48de95774632c
   - enabled: 1
     path: Assets/TestScenes/TestAlmacen.unity
-    guid: 4cf71962014c3cd4db461e6188901380
+    guid: d8b2e186cb4ea6341ac3e3ef7aa7bf4b
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 590fd70538839dd4eaf52b24b88c7eaa
+  - enabled: 1
+    path: Assets/Scenes/Ascensor.unity
+    guid: 3c4cc512d3381cf47aec94c94fa875b7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

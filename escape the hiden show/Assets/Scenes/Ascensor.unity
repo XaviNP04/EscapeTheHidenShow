@@ -24982,7 +24982,7 @@ MonoBehaviour:
   trampa: {fileID: 1958483789}
   player: {fileID: 711831064}
   dialogueLines:
-  - "\xBFEnserio cre\xEDas que era tan f\xE1cil? No sabes lo que te espera..."
+  - "\xBFEn serio cre\xEDas que era tan f\xE1cil? No sabes lo que te espera..."
 --- !u!1 &1812663336
 GameObject:
   m_ObjectHideFlags: 0
