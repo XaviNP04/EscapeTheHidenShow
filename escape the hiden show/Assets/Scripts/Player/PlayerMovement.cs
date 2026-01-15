@@ -152,9 +152,12 @@ public class PlayerMovement : MonoBehaviour
         lastPosition = transform.position;
 
 
-
-    // gravedad (para escaleras)
-    velocity.y += gravity * Time.deltaTime;
+        // gravedad (para escaleras)
+        velocity.y += gravity * Time.deltaTime;
+        if (!isGrounded && velocity.y < -20f)
+        {
+            velocity.y = -20f;
+        }
 
         _charController.Move(velocity * Time.deltaTime);
 
