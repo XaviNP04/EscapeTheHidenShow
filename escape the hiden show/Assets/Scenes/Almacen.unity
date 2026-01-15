@@ -13814,7 +13814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1dba4cfd741654bb695453fd94d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.05
+  velocidad: 2
   movimiento: abajo
   brazo: {fileID: 1740359772}
   iman: {fileID: 126054718}
@@ -27804,7 +27804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1dba4cfd741654bb695453fd94d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.05
+  velocidad: 2
   movimiento: arriba
   brazo: {fileID: 1740359772}
   iman: {fileID: 126054718}
@@ -28790,7 +28790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mecanismo: {fileID: 126054718}
   iman: {fileID: 1005799223}
-  velocidad: 0.05
+  velocidad: 3
   botones:
   - {fileID: 669623155}
   - {fileID: 508111872}
@@ -41165,7 +41165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1dba4cfd741654bb695453fd94d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.05
+  velocidad: 2
   movimiento: derecha
   brazo: {fileID: 1740359772}
   iman: {fileID: 126054718}
@@ -44964,7 +44964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1dba4cfd741654bb695453fd94d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.05
+  velocidad: 2
   movimiento: izquierda
   brazo: {fileID: 1740359772}
   iman: {fileID: 126054718}

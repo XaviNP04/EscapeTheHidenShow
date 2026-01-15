@@ -36,34 +36,24 @@ public class MoverIman : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             bPos = brazo.position;
             iPos = iman.position;
 
+            float mov = velocidad * Time.deltaTime;
+
             switch (movimiento)
             {
                 case "arriba":
-                    if (bPos.x + velocidad < 14f)
-                        bPos.x = bPos.x + velocidad;
-                    else
-                        bPos.x = 14f;
+                    bPos.x = Mathf.MoveTowards(bPos.x, 14f, mov);
                     brazo.position = bPos;
                     break;
                 case "abajo":
-                    if (bPos.x - velocidad > -20f)
-                        bPos.x = bPos.x - velocidad;
-                    else
-                        bPos.x = -20f;
+                    bPos.x = Mathf.MoveTowards(bPos.x, -20f, mov);
                     brazo.position = bPos;
                     break;
                 case "derecha":
-                    if (iPos.z - velocidad > -31f)
-                        iPos.z = iPos.z - velocidad;
-                    else
-                        iPos.z = -31f;
+                    iPos.z = Mathf.MoveTowards(iPos.z, -31f, mov);
                     iman.position = iPos;
                     break;
                 case "izquierda":
-                    if (iPos.z + velocidad < 1f)
-                        iPos.z = iPos.z + velocidad;
-                    else
-                        iPos.z = 1f;
+                    iPos.z = Mathf.MoveTowards(iPos.z, 1f, mov);
                     iman.position = iPos;
                     break;
             }

@@ -40,6 +40,7 @@ public class ActivarIman : MonoBehaviour, IPointerDownHandler
     void Update()
     {
         iPos = mecanismo.position;
+        float movimiento = velocidad * Time.deltaTime;
 
         if (bajando)
         {
@@ -49,19 +50,19 @@ public class ActivarIman : MonoBehaviour, IPointerDownHandler
             } 
             else
             {
-                iPos.y = iPos.y - velocidad;
+                iPos.y -= movimiento;
                 mecanismo.position = iPos;
             }
         } 
         else if (pulsado)
         {
-            if (iPos.y + velocidad < 15f)
-                iPos.y = iPos.y + velocidad;
-            else
-                iPos.y = 15f;
-            mecanismo.position = iPos;
+            if (iPos.y < 15f)
+            {
+                iPos.y = Mathf.MoveTowards(iPos.y, 15f, movimiento);
+                mecanismo.position = iPos;
+            }
 
-            if (iPos.y == 15f)
+            if (Mathf.Approximately(iPos.y, 15f))
             {
                 pulsado = false;
                 mat.DisableKeyword("_EMISSION");
